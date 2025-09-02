@@ -1,0 +1,80 @@
+.home_it-seemed {
+  .container();
+  margin-top: 40px;
+  margin-bottom: 198px;
+
+  &__bg {
+    position: relative;
+
+    &--svg {
+      display: block;
+    }
+
+    &--paginator {
+      position: absolute;
+      width: 232px;
+      height: 51px;
+      top: 30px;
+      right: 0;
+      z-index: 1;
+    }
+
+    &--box {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 30px;
+      font-size: 30px;
+      font-family: @font3;
+    }
+
+    &--pic {
+     display: none;
+     position: absolute;
+     top: 27px; /* Устанавливаем верхнюю границу */
+     left: 305px; /* Устанавливаем левую границу */
+     z-index: 1; /* Устанавливаем z-index, чтобы изображение было выше SVG */
+    }
+    &--pic[data-img="87"] {
+      display: block;
+    }
+
+    &--bottom {
+     position: absolute;
+     min-width: 228px;
+     bottom: 0;
+     left: 0;
+     display: flex;
+     flex-direction: column;
+     z-index: 1;
+    }
+    &--text {
+      position: relative;
+      font-size: 20px;
+      letter-spacing: 2px;
+      flex-wrap: nowrap;
+    }
+    &--year {
+      display: none;
+      position: absolute;
+      top: -30px;
+      left: 145px;
+      width: 100px;
+      font-size: 55px;
+      font-family: @font3_bold;
+    }
+    &--year[data-img="87"] {
+      display: block;
+    }
+
+    &--btn {
+      width: 100%;
+    }
+  }
+
+}
+
+.js_home_paginator.active {
+    font-size: 45px; /* Увеличенный размер шрифта для активного элемента */
+    color: @green; /* Зеленый цвет для активного элемента */
+}

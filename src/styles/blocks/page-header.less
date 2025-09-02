@@ -1,256 +1,51 @@
 .page-header {
   position: fixed; /* Фиксирует заголовок в верхней части окна */
   top: 0; /* Расположение вверху */
-  left: 0; /* Расположение слева */
   width: 100%; /* Занимает 100% ширины экрана */
-  height: 147px; /* Фиксированная высота заголовка */
+  min-height: 105px; /* Фиксированная высота заголовка */
   display: flex; /* Использует Flexbox для размещения элементов */
   align-items: center; /* Выравнивание элементов по центру по вертикали */
-  background-color: rgba(222, 222, 222, 0.98); /* Полупрозрачный фон */
-  backdrop-filter: blur(20px); /* Эффект размытия фона */
-  z-index: 100; /* Уровень наложения для обеспечения видимости над другими элементами */
-
-  // Поддержка для эффекта размытия
-  @supports (backdrop-filter: blur(20px)) {
-    background-color: rgba(222, 222, 222, 0.5); /* Полупрозрачный фон */
-    backdrop-filter: blur(20px); /* Применяет эффект размытия к фону */
-  }
-
-  @media @bw1660 {
-    height: 111px;
-
-    &::before {
-        content: "";
-        display: block;
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: fade(@gray, 98%);
-
-        @supports (backdrop-filter: blur(20px)) {
-          background-color: fade(@gray, 70%);
-          backdrop-filter: blur(20px);
-        }
-    }
-  }
-
-  @media @bw768 {
-    height: 70px;
-  }
-
+  background-color: @bg;
+  z-index: 999; /* Уровень наложения для обеспечения видимости над другими элементами */
 
   &__container {
-    box-sizing: border-box; /* Учитывает отступы и границы в общей ширине и высоте элемента */
-    display: flex; /* Использует Flexbox для размещения дочерних элементов в строку */
-    align-items: center; /* Выравнивание элементов по центру по вертикали */
-    width: 100%; /* Занимает 100% ширины родительского элемента */
-    max-width: 1414px; /* Максимальная ширина контейнера */
+    .container();
+    display: flex;
+    justify-content: space-between;
     margin: 0 auto; /* Центрирование контейнера по горизонтали */
-    padding-left: 40px; /* Левый отступ */
-    padding-right: 40px; /* Правый отступ */
     z-index: 1;
   }
 
+  &__catalog {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 15px;
+    font-family: @font1;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 20px;
+    letter-spacing: 0%;
+    text-align: left;
+    padding-right: 80px;
+  }
+
   &__logo {
-    flex-shrink: 0; /* Запрещает уменьшение размера логотипа при сжатии контейнера */
-    width: 202px; /* Ширина логотипа */
-    height: 147px; /* Высота логотипа */
-    font-size: 0; /* Убирает размер шрифта (если текст не нужен) */
-    text-decoration: none; /* Убирает подчеркивание у ссылки */
-    @media @bw1660 {
-      width: 152px;
-      height: 111px;
-    }
-    @media @bw768 {
-      width: 96px;
-      height: 70px;
+    display: flex;
+    flex-direction: column;
+
+    &--pic {
+      width: 74px;
+      height: 63px;
     }
   }
 
-  &__logo-icon {
-    width: 100%;
-    height: 100%;
-  }
 
   &__nav {
-    box-sizing: border-box; /* Ширина и высота элемента включают в себя содержимое, паддинги и границы. */
     display: flex;
-    align-items: baseline; /* выравнивает элементы по их базовой линии */
-    margin: 0 auto; /* центрирует навигацию в пределах родительского контейнера */
-
-    @media @bw768 {
-      padding: 150px 20px 30px;
-    }
-
-    @media @bw1020 {
-      position: absolute; /* Абсолютное позиционирование */
-      left: 0; /* Влево к родителю */
-      top: 0; /* Вверх к родителю */
-      width: 100%; /* Полная ширина */
-      height: 100vh; /* Полная высота окна */
-      flex-direction: column; /* Вертикальное расположение */
-      align-items: flex-start; /* Выравнивание по левому краю */
-      padding: 211px 30px 30px; /* Внутренние отступы */
-      background-color: fade(@gray, 98%); /* Полупрозрачный фон */
-      transition: transform 0.4s; /* Плавный переход для transform */
-      transform: translateX(-100%); /* Сдвиг влево */
-      overflow-x: hidden; /* Скрыть горизонтальную прокрутку */
-      overflow-y: auto; /* Вертикальная прокрутка при необходимости */
-
-      @supports (backdrop-filter: blur(20px)) { /* Если поддерживается размытие */
-        background-color: fade(@gray, 70%); /* Более прозрачный фон */
-        backdrop-filter: blur(20px); /* Эффект размытия */
-      }
-    }
-  }
-
-  &__nav-user {
-    display: none;
-    @media @bw1020 {
-      display: flex;
-      align-items: center;
-      margin-top: 20px;
-    }
-  }
-
-  &__nav-link,
-  &__nav-user-link {
-    color: @black;
-    text-decoration: none;
-    &:hover {
-      color: @red_dark;
-    }
-  }
-
-  &__nav-link {
-    margin: 0 25px; /* Отступы */
-    font-weight: 600; /* Жирность шрифта */
-    font-size: 18px; /* Размер шрифта */
-    line-height: 25px; /* Устанавливаем высоту строки для удобочитаемости */
-    text-decoration: none; /* Убираем подчеркивание для ссылок */
-    transition: color 0.2s; /* добавляет плавный эффект изменения цвета при наведении */
-
-    @media @bw1020 {
-      margin: 0 0 40px;
-      font-size: 16px;
-      line-height: 22px;
-    }
-  }
-
-  &__nav-user-link {
-    margin-right: 25px;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 22px;
-  }
-
-  &__nav-logout {
-    width: 24px;
-    height: 24px;
-    font-size: 0;
-  }
-
-  &__right-block {
-    position: relative;
-    display: flex; /* Использует Flexbox для расположения элементов внутри блока */
-    justify-content: flex-end; /* Выравнивает элементы по горизонтали вправо */
-    align-items: center; /* Выравнивает элементы по вертикали по центру */
-    width: 202px; /* Устанавливает фиксированную ширину блока */
-    @media @bw1660 {
-      width: 152px;
-    }
-    @media @bw1020 {
-      width: auto;
-      margin-left: auto;
-    }
-  }
-
-  &__user-btn {
-    max-width: 100%;
-    display: inline-block;
-    box-sizing: border-box;
-    padding: 15px 40px;
-    border: 1px solid @black;
-    background-color: transparent;
-    outline: none;
-    color: @black;
-    font-weight: 600;
-    font-size: 16px;
-    line-height: 20px;
-    text-align: center;
-    text-decoration: none;
-    transition: color 0.2s, background-color 0.2s, border-color 0.2s;
-    overflow: hidden;
-    cursor: pointer;
-    @media @bw1020 {
-      display: flex;
-      width: 40px;
-      height: 40px;
-      padding: 0;
-      border: none;
-      background: none;
-      color: @black;
-      font-size: 0;
-    }
-    &:hover {
-      background-color: @black;
-      color: @white;
-      @media @bw1020 {
-        background: none;
-        color: @red;
-      }
-    }
-  }
-
-  &__user-icon {
-    display: none;
-    @media @bw1020 {
-      display: block;
-      margin: auto;
-    }
-  }
-
-  // кнопка гамбургер
-  &__nav-toggle {
-    display: none;  // Скрывает кнопку по умолчанию
-
-    @media @bw1020 {
-      display: block;       // Показывает кнопку на больших экранах
-      position: relative;   // Устанавливает относительное позиционирование для корректного размещения
-      right: -11px;         // Сдвигает кнопку немного вправо
-      margin-left: 18px;    // Добавляет отступ слева
-      width: 40px;          // Ширина кнопки
-      height: 40px;         // Высота кнопки
-      border: none;         // Убирает границу
-      background: none;     // Убирает фон
-    }
-    &::before,
-    &::after {
-      content: "";          // Создает пустое содержимое
-      display: block;       // Отображает блок
-      position: absolute;   // Устанавливает абсолютное позиционирование
-      top: 19px;            // Устанавливает вертикальное положение по умолчанию
-      left: 11px;           // Устанавливает горизонтальное положение
-      width: 18px;          // Ширина полоски
-      height: 2px;          // Высота полоски
-      border-radius: 2px;   // Скругляет углы полоски
-      background-color: @black;     // Цвет полоски
-      transform-origin: 50% 50%;    // Устанавливает точку вращения в центр полоски
-    }
-    // Стили для верхней полоски
-    &::before {
-      top: 13px;                    // Сдвигает верхнюю полоску вверх
-      box-shadow: 0 6px 0 @black;   // Добавляет тень вниз для эффекта
-    }
-    // Стили для нижней полоски
-    &::after {
-      top: 25px;                    // Сдвигает нижнюю полоску вниз
-    }
-  }
-  @media @bw768 {
-      margin-left: 5px;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 50px;
   }
 
 }

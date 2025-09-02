@@ -16,22 +16,24 @@ import imagemin_mozjpeg from "imagemin-mozjpeg";
 import imagemin_optipng from "imagemin-optipng";
 import svgmin from "gulp-svgmin";
 import svgstore from "gulp-svgstore";
+import webp from 'gulp-webp';
 import server from "browser-sync";
 const resources = {
   html: "src/html/**/*.html",
   jsDev: "src/scripts/dev/**/*.js",
   jsVendor: "src/scripts/vendor/**/*.js",
   images: "src/assets/images/**/*.{png,jpg,jpeg,webp,gif,svg}",
+  images2: "src/assets/images/**/*.{png,jpg,jpeg}",
   less: "src/styles/**/*.less",
   svgSprite: "src/assets/svg-sprite/*.svg",
   static: [
     "src/assets/icons/**/*.*",
     "src/assets/favicons/**/*.*",
-    "src/assets/fonts/**/*.{woff,woff2}",
-    "src/assets/video/**/*.{mp4,webm}",
-    "src/assets/audio/**/*.{mp3,ogg,wav,aac}",
-    "src/json/**/*.json",
-    "src/php/**/*.php"
+    "src/assets/fonts/**/*.{woff,woff2,ttf}",
+    "src/assets/video/**/*.{mp4,webm}"
+    //"src/assets/audio/**/*.{mp3,ogg,wav,aac}",
+    //"src/json/**/*.json",
+    //"src/php/**/*.php"
   ]
 };
 // Gulp Tasks:
@@ -97,13 +99,14 @@ function jsCopy() {
 function copy() {
   return gulp
     .src(resources.static, {
-      base: "src", encoding: false
+      encoding: false,
+      base: "src"
     })
     .pipe(gulp.dest("dist/"));
 }
 function images() {
   return gulp
-    .src(resources.images, {encoding: false})
+    .src(resources.images, { encoding: false })
     .pipe(
       imagemin([
         imagemin_gifsicle({ interlaced: true }),
@@ -113,9 +116,18 @@ function images() {
     )
     .pipe(gulp.dest("dist/assets/images"));
 }
+
+function convertwebp() {
+  return gulp
+    .src('src/assets/images/**/*', { encoding: false })
+    .pipe(
+      webp({quality: 100})
+    )
+    .pipe(gulp.dest("dist/assets/images"));
+}
 function svgSprite() {
   return gulp
-    .src(resources.svgSprite)
+    .src(resources.svgSprite, { encoding: false })
     .pipe(
       svgmin({
         js2svg: {
@@ -139,6 +151,7 @@ const build = gulp.series(
   js,
   jsCopy,
   images,
+  convertwebp,
   svgSprite
 );
 function reloadServer(done) {
@@ -155,6 +168,7 @@ function serve() {
   gulp.watch(resources.jsVendor, gulp.series(jsCopy, reloadServer));
   gulp.watch(resources.static, { delay: 500 }, gulp.series(copy, reloadServer));
   gulp.watch(resources.images, { delay: 500 }, gulp.series(images, reloadServer));
+  gulp.watch(resources.images, { delay: 500 }, gulp.series(convertwebp, reloadServer));
   gulp.watch(resources.svgSprite, gulp.series(svgSprite, reloadServer));
 }
 const start = gulp.series(build, serve);
@@ -168,6 +182,7 @@ export {
   images,
   svgSprite,
   build,
+  convertwebp,
   serve,
   start
 };

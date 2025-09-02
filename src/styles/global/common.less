@@ -1,78 +1,156 @@
 html, body {
-  width: 100%; /* Устанавливает ширину для html и body на 100% */
-  margin: 0; /* Убирает внешние отступы по умолчанию */
-  padding: 0; /* Убирает внутренние отступы по умолчанию */
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+*{
+  box-sizing: border-box;
+}
+body{
+  display: flex;
+  font-family: @font1;
+  font-size: 18px;
+  color: @black;
+  line-height: 1.3;
+
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: @bg;
+  padding-top: 109px;
+  overflow-x: hidden;
+  @media @bw1340{
+    font-size: 16px;
+  }
 }
 
-.body {
-  box-sizing: border-box; /* Учитывает отступы и границы в общей ширине и высоте элемента */
-  display: flex; /* Использует Flexbox для размещения дочерних элементов */
-  flex-direction: column; /* Располагает дочерние элементы в колонку */
-  min-height: 100vh; /* Минимальная высота равна 100% высоты окна браузера */
-  background-color: @gray;
-  background-image: url(../../assets/images/noise.png), url(../../assets/images/bg.png);
-  background-position: 0 0, 0 0;
-  background-size: auto, 100% auto;
-  background-repeat: repeat, repeat-y;
-  color: @black; /* цвет текста */
-  font-family: @font1; /* Шрифт и запасной шрифт */
-  font-size: 16px; /* Размер шрифта */
-  font-weight: 400; /* Нормальная жирность шрифта */
-  font-style: normal; /* Обычный стиль шрифта */
-  line-height: 1.375; /* Высота строки */
-  overflow-x: hidden;
-  padding-top: 147px; /* Отступ сверху, чтобы учесть фиксированный заголовок */
-
-  @media @bw1660 {
-    padding-top: 111px;
+.title{
+  margin-top: 0;
+  font-size: 84px;
+  font-family: @font3_bold;
+  font-weight: normal;
+  letter-spacing: 4px;
+  @media @bw1340{
+    font-size: 60px;
   }
   @media @bw768 {
-    padding-top: 70px;
+    font-size: 36px;
+    text-align: center;
   }
-
+}
+// .page-title{
+//   margin-top: 27px;
+//   margin-bottom: 51px;
+//   @media @bw1340{
+//     margin-top: 20px;
+//     margin-bottom: 31px;
+//   }
+//   @media @bw768{
+//     text-align: left;
+//     margin-top: 25px;
+//     margin-bottom: 26px;
+//   }
+// }
+// .products-listing{
+//   margin-top: -2px;
+//   margin-right: -17px;
+//   @media @bw1660 {
+//     margin-right: -6px;
+//   }
+//   @media @bw880 {
+//     margin-right: 0;
+//   }
+// }
+img{
+  max-width: 100%;
+  height: auto;
+}
+picture {
+  position: relative;
 }
 
 .main {
-  margin-right: auto; /* Центрирование элемента справа */
-  margin-left: auto; /* Центрирование элемента слева */
-  max-width: 1920px; /* Максимальная ширина 1920 пикселей */
+  flex: 1 0 auto;
 }
-
 .page-footer {
   flex: 0 0 auto;
 }
 
 a {
-  color: @black; /* Устанавливает цвет текста для ссылок */
-  outline: none; /* Убирает контур вокруг ссылки при фокусировке */
+  color: @black;
+  outline: none;
   text-decoration: none;
 }
+// .container{
+//   .container();
+// }
+// .container-in{
+//   .container();
+//   padding-left: 40px;
+//   padding-right: 40px;
+// }
+// .d-flex{
+//   .d-flex();
+// }
+// .d-grid{
+//   .d-grid();
+// }
+// .w-100{
+//   width: 100%;
+// }
+// .picture, picture{
+//   .picture()
+// }
 
-.img {
-  max-width: 100%; // это свойство гарантирует, что элемент не выйдет за пределы своего родительского контейнера
-  height: auto;
-  object-fit: cover; // это свойство позволяет изображению заполнять контейнер, обрезая его при необходимости
+.show-event-popup{
+  scrollbar-gutter: stable both-edges;
+  height: 100%;
+  overflow: hidden;
 }
 
-input,
-textarea,
-select {
-  box-shadow: none; /* Убирает тень у элементов ввода */
-  outline: none;    /* Убирает обводку при фокусе */
-  color: @black;    /* Устанавливает цвет текста на черный */
-  font-family: @font1; /* Устанавливает шрифт для элементов */
-}
-textarea {
-  resize: none; /* Запрещает изменение размера текстовой области */
-}
+// .bg-blue, body .bg-blue{
+//   background-color: @blue1;
+// }
+// .bg-blue-2, body .bg-blue-2{
+//   background-color: @blue2;
+// }
+// .bg-orange, body .bg-orange{
+//   background-color: @orange;
+// }
+// .bg-green, body .bg-green{
+//   background-color: @green;
+// }
+// .bg-yellow, body .bg-yellow{
+//   background-color: @yellow;
+// }
+//
+// select::-ms-expand {
+//   display: none;
+// }
+// input::placeholder {
+//   transition: color 0.2s;
+//   opacity: 1;
+//   color: inherit;
+// }
+// input:focus::placeholder {
+//   color: transparent;
+//   opacity: 1;
+// }
+//
+// .svg-ico{
+//   display: inline-flex;
+//   align-items: center;
+//   justify-content: center;
+//   position: relative;
+//   svg{
+//     width: 100%;
+//     height: 100%;
+//   }
+// }
+// .text-center{
+//   text-align: center;
+// }
 
-ul {
-    margin-block-start: 0px;
-    margin-block-end: 0px;
+h2 {
+  margin-block-start: 0;
+  margin-block-end: 0;
 }
-li {
-    margin-block-start: 0px;
-    margin-block-end: 0px;
-}
-
-

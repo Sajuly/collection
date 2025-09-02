@@ -1,203 +1,63 @@
 .container() {
-  box-sizing: border-box;
   width: 100%;
-  max-width: 1414px;
-  margin: 0 auto; /* Центрирование блока */
-  padding-left: 40px;
-  padding-right: 40px;
-
+  max-width: 1469px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 0px;
+  padding-right: 0px;
+  @media @bw1660{
+      padding: 0 40px;
+    }
   @media @bw1340 {
-    padding-left: 40px;
-    padding-right: 40px;
+    padding-left: 26px;
+    padding-right: 26px;
   }
   @media @bw768 {
-    padding-left: 30px;
-    padding-right: 30px;
-  }
-  @media @bw600 {
     padding-left: 20px;
     padding-right: 20px;
   }
 }
 
-.width_624 {
-  box-sizing: border-box;
-  width: 100%;
-  max-width: 624px;
-  @media @bw1660 {
-    max-width: 604px;
-  }
-  @media @bw1340 {
-    max-width: 566px;
-  }
-}
+// .d-flex(@wrap: wrap){
+//   display: flex;
+//   flex-wrap: @wrap;
+// }
+// .d-grid(){
+//   display: grid;
+// }
 
-.title-texts() {
-  display: flex; /* Включаем Flexbox */
-  justify-content: center; /* Центрируем по горизонтали */
-  align-items: center; /* Центрируем по вертикали */
-
-  border: 1px solid black; /* Граница */
-  font-family: @font2;
-  font-size: 36px;
-  font-weight: 500;
-  color: @white; /* Цвет текста для кнопок */
-  background-color: @black;
-  text-transform: uppercase; /* Преобразование текста в верхний регистр */
-  margin: 0 auto 150px; /* Центрирование самого элемента и отступ снизу на 150 пикселей */
-  width: 624px; /* ширина кнопки */
-  height: 62px;
-
-  @media @bw1340 {
-    max-width: 604px;
-    margin: 0 auto 130px;
-    width: 604px;
-  }
-  @media @bw768 {
-    max-width: 566px;
-    margin: 0 auto 100px;
-    font-size: 24px;
-    height: 52px;
-  }
-  @media @bw400 {
-    max-width: 100%;
-    margin: 0 auto 80px;
-    font-size: 16px;
-    width: 280px;
-  }
-}
-
-.display-none {
-  display: none;
-}
-
-.color-red {
-  color: @red;
-}
+// .picture(@padding-top: 60%) {
+//   position: relative;
+//   overflow: hidden;
+//   display: flex;
+//   &::after {
+//     content: "";
+//     display: block;
+//     padding-top: @padding-top;
+//   }
+//   img {
+//     display: block;
+//     margin: 0;
+//     position: absolute;
+//     left: 0;
+//     top: 0;
+//     width: 100%;
+//     height: 100%;
+//     object-fit: cover;
+//   }
+// }
 
 .is-hidden {
-  position: absolute !important; /* Абсолютное позиционирование для скрытия элемента */
-  width: 0 !important; /* Ширина элемента равна 0 */
-  height: 0 !important; /* Высота элемента равна 0 */
-  margin: 0 !important; /* Убирает все отступы */
-  padding: 0 !important; /* Убирает все внутренние отступы */
-  border: 0 !important; /* Убирает границы элемента */
-  clip: rect(0 0 0 0) !important; /* Обрезает элемент до нуля */
-  clip-path: inset(100%) !important; /* Скрывает элемент с помощью clip-path */
-  white-space: nowrap !important; /* Убирает перенос строк */
-  overflow: hidden !important; /* Скрывает переполнение содержимого */
-  visibility: hidden !important; /* Делает элемент невидимым */
-  pointer-events: none !important; /* Игнорирует события указателя (клики и т.д.) */
-}
-
-.show-event-popup {
-  body {
-    overflow: hidden; /* Отключает прокрутку страницы при открытом попапе */
-  }
-  #eventPP {
-    display: flex; /* Показывает попап с использованием flexbox */
-  }
-}
-
-.show-nav {
-  body {
-    @media @bw1020 {
-      overflow: hidden;
-    }
-  }
-  .page-header__nav {
-    @media @bw1020 {
-      transform: translateX(0);
-    }
-  }
-  .page-header__nav-toggle {
-    &::before {
-      transform: translate(0px, 6px) rotate(45deg);
-      box-shadow: none;
-    }
-    &::after {
-      transform: translate(0px, -6px) rotate(-45deg);
-    }
-  }
-}
-
-.page-header {
-  /*...*/
-  &__nav-toggle {
-    /*...*/
-    &::before,
-    &::after {
-      /*...*/
-      transform-origin: 50% 50%;
-      transition: transform 0.4s, box-shadow 0.4s;
-    }
-  }
-}
-
-.show-event-popup {
-  body {
-    overflow:hidden;
-  }
-  #js-eventPP {
-    display: flex;
-  }
-}
-
-.pp_title() {
-  display: block; /* Блочное отображение заголовка */
-  color: @black; /* Черный цвет текста */
-  font-weight: 700; /* Жирный шрифт */
-  font-size: 18px; /* Размер шрифта заголовка */
-  line-height: 25px; /* Высота строки заголовка */
-}
-
-.events_flex() {
-  display: flex; /* Используем flex для размещения элементов в строку */
-  flex-wrap: wrap; /* Перенос элементов на новую строку при нехватке места */
-  justify-content: center; /* Центрируем по горизонтали */
-  align-items: center; /* Центрируем по вертикали */
-  width: 100%;
-  gap: 120px 60px;
-  @media @bw768 {
-    gap: 80px 30px;
-  }
-}
-
-.text-hover(@color) {
-  cursor: pointer;
-  color: @color; // Меняет цвет текста
-  text-decoration-color: @color; // Устанавливает цвет подчеркивания
-  //   text-decoration: underline; // Добавляет подчеркивание
-}
-
-.check_input() {
-  .is-hidden();  /* Скрываем стандартный элемент <input> */
-  &:checked {
-    & ~ .form_check__mark,
-    & ~ .page-footer__subscribe-form--mark,
-    & ~ .event_check-table__mark {
-      background-color: @black; /* Устанавливает фоновый цвет элемента в черный (переменная @black) */
-      &::after { /* Псевдоэлемент, который добавляется после содержимого элемента */
-        content: ""; /* Не отображает текст; используется для создания визуальных эффектов */
-        display: block; /* Делает псевдоэлемент блочным, чтобы он занимал пространство */
-        position: absolute; /* Позволяет позиционировать псевдоэлемент относительно ближайшего родителя с относительным позиционированием */
-        left: 7px; /* Устанавливает расстояние от левого края родителя */
-        top: 2px; /* Устанавливает расстояние от верхнего края родителя */
-        width: 6px; /* Ширина псевдоэлемента */
-        height: 12px; /* Высота псевдоэлемента */
-        border-bottom: 2px solid @white; /* Устанавливает нижнюю границу в 2px белого цвета (переменная @white) */
-        border-right: 2px solid @white; /* Устанавливает правую границу в 2px белого цвета */
-        transform: rotate(45deg); /* Поворачивает псевдоэлемент на 45 градусов, создавая эффект стрелки или галочки */
-      }
-    }
-  }
-}
-
-.error_style {
-  label.error,
-  span.error {
-    display: block;
-    margin: 5px 0 0;
-    color: @red; /* Устанавливаем красный цвет шрифта */
-  }
+  position: absolute !important;
+  width: 0 !important;
+  height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  clip: rect(0 0 0 0) !important;
+  clip-path: inset(100%) !important;
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
 }

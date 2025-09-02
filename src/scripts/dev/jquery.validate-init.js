@@ -27,7 +27,7 @@
     ),
     min: $.validator.format(
       "Пожалуйста, введите число, большее или равное {0}."
-    )
+    ),
   });
   $.validator.addMethod(
     "email",
@@ -40,6 +40,50 @@
     "Введите корректный e-mail"
   );
 
-  //дальнейший код для валидации форм
+  const eventForm = $("#js-eventForm");
+  if (eventForm.length) {
+    eventForm.validate({
+      errorElement: "span",
+    });
+  }
 
+  toastr.options = {
+    "positionClass": "toast-top-center",
+    "timeOut": "5000",
+  }
+
+  const subscribeForm = $("#js-subscribeForm");
+  if (subscribeForm.length) {
+    const subscribeAction = subscribeForm.attr("action");
+    const subscribeEmail = subscribeForm.find("#js-subscribeEmail");
+    
+    subscribeForm.validate({
+      errorElement: "span",
+      errorPlacement: function (error, element) {
+        if (element.attr("type") == "email") {
+          error.insertAfter(".page-footer__btn");
+        } else {
+          error.insertAfter(element);
+        }
+      },
+      submitHandler: function (form, event) {
+        event.preventDefault();
+        $.ajax({
+          url: subscribeAction,
+          method: "POST",
+          data: {
+            email: subscribeEmail.val(),
+          },
+          success: function () {
+            subscribeEmail.val("");
+            subscribeEmail.blur();
+            toastr.success('Вы успешно подписались на рассылку новостей', '');
+          },
+          error: function () {
+            toastr.error('Что-то пошло не так, попробуйте еще раз', '');
+          },
+        });
+      },
+    });
+  }
 })();

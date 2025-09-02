@@ -1,4 +1,7 @@
-﻿debug.log
+debug.log
 node_modules
-.vscode
 dist
+.vscode
+old-*
+collection.code-workspace
+src/html/test.html

@@ -1,316 +1,65 @@
 .page-footer {
-  .container();
-  position: relative;
-  margin-bottom: 73px;
+  margin-bottom: 50px;
+  &__container {
+    display: flex; /* Использует Flexbox для размещения элементов */
+    flex-direction: column;
+    width: 100%; /* Занимает 100% ширины экрана */
+    min-height: 120px; /* Фиксированная высота заголовка */
+  }
 
-  &__line-box {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 98px;
+  &__dog-line {
+    display: flex;
+    width: 100%;
+    height: 120px;
+    background-color: @red;
+    align-items: center;
+    justify-content: center;
     margin-bottom: 60px;
-    @media @bw1340 {
-      gap: 92px;
-    }
-    @media @bw768 {
-      gap: 52px;
-    }
-    @media @bw400 {
-      gap: 20px;
-    }
-  }
-
-  &__line1,
-  &__line2 {
-    position: relative; /* Позиционирование для псевдоэлемента */
-  }
-
-  &__line1::after {
-    content: "";
-    background: linear-gradient(270.00deg, rgb(28, 27, 27), rgba(255, 255, 255, 0) 100%);
-    width: 618px; /* Ширина линии */
-    height: 2px; /* Высота линии */
-    position: absolute; /* Абсолютное позиционирование */
-    left: 0; /* Позиция относительно родителя */
-    top: 0; /* Позиция относительно родителя */
-    @media @bw1340 {
-      width: 584px; /* Ширина линии */
-    }
-    @media @bw768 {
-      width: 328px; /* Ширина линии */
-    }
-    @media @bw400 {
-      width: 130px; /* Ширина линии */
-    }
-  }
-
-  &__line2::after {
-    content: ""; /* Псевдоэлемент требует контент */
-    background: linear-gradient(135.00deg, rgb(28, 27, 27) 0%,rgba(255, 255, 255, 0) 100%);
-    width: 618px; /* Ширина линии */
-    height: 2px; /* Высота линии */
-    position: absolute; /* Абсолютное позиционирование */
-    left: 0; /* Позиция относительно родителя */
-    top: 0; /* Позиция относительно родителя */
-    @media @bw1340 {
-      width: 584px; /* Ширина линии */
-    }
-    @media @bw768 {
-      width: 328px; /* Ширина линии */
-    }
-    @media @bw400 {
-      width: 130px; /* Ширина линии */
-    }
   }
 
   &__info {
-    display: grid; /* Используем сетку */
-    grid-template-columns: 265px 1fr 1fr 500px;
-    grid-template-areas:
-      "red_list red_list red_list sub_form"
-      "red_list red_list red_list sub_form"
-      "millen cooky icons dignity"
-      "politic cooky icons dignity";
-    gap: 10px 10px;
-
-    @media @bw768 {
-      grid-template-columns: 1fr 1fr 388px;
-      grid-template-areas:
-        "red_list sub_form sub_form"
-        "red_list sub_form sub_form"
-        "icons icons icons"
-        "millen millen millen"
-        "politic cooky dignity";
-      gap: 10px 10px;
-    }
-    @media @bw400 {
-      display: flex;
+    .container();
+    display: flex;
+    margin-bottom: 55px;
+    gap: 175px;
+    &--catalog {
+      width: 150px;
       flex-direction: column;
     }
-  }
-
-  &__red-list {
-    grid-area: red_list;
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    height: 100%;
-    align-items: center;
-    align-items: flex-start;
-    font-weight: bold;
-    font-size: 16px;
-    font-family: @font1;
-    color: @black;
-    gap: 22px;
-
-    @media @bw400 {
-      margin-bottom: 62px;
-      gap: 27px;
-      font-size: 14px;
+    &--list {
+       display: flex;
+       flex-direction: column;
+       gap: 16px;
     }
-    a {
-      margin-left: 22px;
+    &--buyer {
+      flex-direction: column;
+      width: 173px;
     }
-  }
-  &__red-list::before { // Красная полоса слева
-    content: "";
-    position: absolute; /* Абсолютное позиционирование */
-    left: 0; /* Позиция слева */
-    top: 0; /* Позиция сверху */
-    width: 4px; /* Ширина полосы */
-    height: 100%; /* Высота на всю высоту родителя */
-    background-color: @red; /* Цвет полосы */
-  }
-  &__link {
-    &:hover {
-      .text-hover(@red_dark);
+    &--connect {
+      flex-direction: column;
+      margin-left: auto;
     }
-  }
-
-  &__subscribe-form {
-    grid-area: sub_form;
-    margin-bottom: 59px;
-    justify-self: end;
-
-    &--label {
-      font-size: 16px;
-      font-family: @font1;
-      margin-bottom: 14px;
-      @media @bw768 {
-        font-weight: bold;
-      }
-      @media @bw400 {
-        font-weight: normal;
-        font-size: 13px;
-        text-align: center;
-      }
-    }
-    &--email-enter {
-      margin-bottom: 15px;
-    }
-    &--email {
-      display:flex;
-      flex-direction: row;
-      margin-top: 14px;
-      height: 49px;
-      @media @bw400 {
-       width: 100%;
-      }
-    }
-    &--input-field {
-      height: 100%; /* Высота поля ввода */
-      width: 275px;
-      padding: 0 28px;
-      box-sizing: border-box;
-      @media @bw400 {
-        width: 200px;
-        padding: 0 20px;
-        font-size: 12px;
-      }
-    }
-    &--submit {
-      box-sizing: border-box;
-      width: 135px;
-      height: 100%;
-      background-color: @black;
-      color: @white;
-      font-family: @font1;
-      font-size: 16px;
-      cursor: pointer; /* Указывает, что элемент кликабельный */
-      &:hover {
-        border-color: @red; /* Цвет границы */
-        background-color: @red;
-        color: @white;
-      }
-      @media @bw400 {
-        font-size: 12px;
-      }
-    }
-    &__check {
-      position: relative;
-    }
-    &--input {
-      .check_input();
-    }
-    &--mark {
-      box-sizing: border-box; /* Учитывает границы и отступы в ширине и высоте */
-      display: block; /* Делает элемент блочным */
-      position: absolute; /* Позволяет свободно позиционировать элемент */
-      width: 24px; /* Ширина элемента */
-      height: 24px; /* Высота элемента */
-      border: 1px solid @black; /* Черная рамка вокруг элемента */
-    }
-    &--check-label {
-      margin-left: 39px;
-      font-size: 14px;
-      width: 241px;
-      line-height: 16px;
-      white-space: nowrap;
-      @media @bw400 {
-        font-size: 12px;
-        white-space: normal;
-      }
-    }
-    .check-error-message {
-      label.error,
-      span.error {
-        margin-left: 45px; /* Отступ слева от метки */
-      }
-    }
-  }
-
-  &__icons {
-    grid-area: icons;
-    display: flex;
-    gap: 44px;
-    justify-content: center;
-    align-items: flex-end;
-    align-self: end;
-    @media @bw768 {
-      justify-content: flex-end;
-    }
-    @media @bw768 {
-      justify-content: center;
-      align-self: center;
-      padding-top: 50px;
-      padding-bottom: 50px;
-    }
-    @media @bw400 {
-      gap: 30px;
-      padding-top: 0px;
-    }
-  }
-
-  &__politic {
-    grid-area: politic;
-    font-size: 16px;
-    font-weight: bold;
-    white-space: nowrap;
-    &--link {
-      &:hover {
-        .text-hover(@red_dark);
-      }
-    }
-    @media @bw768 {
-      font-size: 14px;
-    }
-    @media @bw400 {
-       margin-bottom: 15px;
-    }
-  }
-
-  &__cooky {
-    grid-area: cooky;
-    font-weight: bold;
-    font-size: 16px;
-    align-self: end;
-    margin-left: 60px;
-    &--link {
-      &:hover {
-        .text-hover(@red_dark);
-      }
-    }
-    @media @bw768 {
-      align-self: start;
-      margin-left: 0px;
-    }
-    @media @bw400 {
-      font-size: 14px;
-      margin-bottom: 20px;
-    }
-  }
-
-  &__millennials {
-    grid-area: millen;
-    display: flex;
-    margin-top: 58px;
-
-    @media @bw768 {
-      margin-top: 0px;
-      justify-content: start;
-    }
-    @media @bw400 {
-      justify-content: flex-end;
-    }
-  }
-
-  &__dignity {
-    grid-area: dignity;
-    display: flex;
-    flex-wrap: nowrap;
-    justify-content: flex-end;
-    align-self: end;
-
-    span {
-      font-size: 16px;
-      font-family: @font1;
-      font-weight: bold;
-      @media @bw400 {
-        font-size: 13px;
-        height: 19px;
-      }
+    &--text {
+      text-align: right;
     }
     &--svg {
-      padding-left: 10px;
+      display: flex;
+      gap: 20px;
+    }
+
+  }
+
+  &__cookies {
+    .container();
+    display: flex;
+    flex-direction: row;
+    gap: 57px;
+    font-weight: bold;
+    &--a {
+      font-family: @font1;
+      font-size: 16px;
+      line-height: 20px;
+
     }
   }
 
