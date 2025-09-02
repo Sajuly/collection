@@ -11,7 +11,15 @@
 <main>
   @@include('blocks/home/home_it-seemed.html')
   @@include('blocks/home/home_kit-haring.html')
-  @@include('blocks/home/home_poster-swiper.html')
+
+  <section class="home-popular popular">
+    @@include('blocks/home/home-slider.html', {
+      'class': 'popular__posts home__posts',
+      'title': 'Популярные постеры',
+    })
+  </section>
+
+
 <!--  @@include('blocks/home/home_addresses.html')-->
 </main>
 

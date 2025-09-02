@@ -1,2 +1,0 @@
-# collection
-Tusur - Итоговый проект
