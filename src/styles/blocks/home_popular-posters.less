@@ -1,0 +1,78 @@
+.home_popular-posters {
+  margin-bottom: 122px;
+  padding-top: 46px;
+  padding-bottom: 46px;
+  margin: 0 -10%;
+  @media @bw1340 {
+    padding-top: 0;
+    padding-bottom: 25px;
+  }
+
+  &__title {
+    text-align: center;
+    margin-bottom: 53px;
+    @media @bw1340 {
+      margin-bottom: 38px;
+    }
+    @media @bw768 {
+      padding-left: 40px;
+      padding-right: 40px;
+      line-height: 1.2;
+      margin-bottom: 17px;
+    }
+  }
+
+  &__item {
+    display: block;
+    padding: 60px 40px;
+    position: relative;
+    @media @bw1340 {
+      padding: 33px;
+      min-width: 260px;
+    }
+  }
+
+  &__pic {
+    max-width: 347px;
+    height: 347px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    @media @bw768 {
+      height: 186px;
+    }
+
+    img {
+      width: auto !important;
+      max-width: 100%;
+      position: static;
+      max-height: 347px;
+      @media @bw1340 {
+        max-height: 194px;
+      }
+    }
+  }
+
+  &__pic::after {
+    padding-top: 100%;
+  }
+
+  &__caption {
+    padding-top: 53px;
+    font-size: 16px;
+    font-weight: 300;
+    transition: opacity 0.2s;
+    opacity: 0;
+    @media @bw1340 {
+      padding-top: 37px;
+      text-align: center;
+    }
+  }
+
+  .center .home_popular-posters__caption {
+    opacity: 1;
+  }
+}
