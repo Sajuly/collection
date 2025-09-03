@@ -85,6 +85,67 @@
         },
     });
 
+  // ---------------- Google map -----------------------------
+
+// Получаем все элементы с классом "js-address" и добавляем обработчик события на клик
+document.querySelectorAll(".js-address").forEach((addressElement) => {
+  addressElement.addEventListener("click", function (event) {
+    // Отменяем стандартное поведение ссылки
+    event.preventDefault();
+    // Координаты по умолчанию
+    const defaultCoordinates = "56.490202, 84.949185";
+
+    // Получаем координаты из атрибутов данных элемента
+    const coordinate1 = this.dataset.coord1;
+    const coordinate2 = this.dataset.coord2;
+    const mapUrl = `${coordinate1},${coordinate2}`; // Формируем строку с координатами
+    console.log(mapUrl);
+
+    // Убираем класс "active" у всех адресов и добавляем его к текущему
+    document.querySelectorAll(".js-address").forEach((el) => el.classList.remove("active"));
+    this.classList.add("active");
+
+    // Инициализируем карту с текущими координатами
+    initMap(coordinate1, coordinate2);
+  });
+});
+
+// Инициализация карты с координатами по умолчанию
+initMap("56.490202", "84.949185");
+
+// Функция для инициализации карты
+function initMap(latitude, longitude) {
+  const mapContainer = document.querySelector("#js-contactsMap"); // Контейнер для карты
+  if (mapContainer) {
+    const mapCenter = new google.maps.LatLng(latitude, longitude); // Центр карты
+    const mapOptions = {
+      center: mapCenter,
+      disableDefaultUI: true, // Отключаем стандартные элементы управления
+      draggable: true, // Позволяем перетаскивать карту
+      gestureHandling: "cooperative", // Управление жестами
+      scrollwheel: false, // Отключаем прокрутку колесиком мыши
+      zoom: 17, // Уровень масштабирования
+      zoomControl: true, // Включаем управление масштабированием
+      zoomControlOptions: {
+        position: google.maps.ControlPosition.RIGHT_BOTTOM, // Позиция кнопки управления масштабированием
+      },
+    };
+
+    // Создаем карту
+    const map = new google.maps.Map(mapContainer, mapOptions);
+    const markerPosition = new google.maps.LatLng(latitude, longitude); // Позиция маркера
+    const markerIcon = "../assets/images/map-pointer.png"; // Иконка маркера
+
+    // Создаем маркер на карте
+    new google.maps.Marker({
+      position: markerPosition,
+      map: map,
+      icon: markerIcon,
+      title: "collection", // Заголовок маркера
+    });
+  }
+}
+
 
 })();
 
