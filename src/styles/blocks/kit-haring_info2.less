@@ -1,0 +1,37 @@
+.kit-haring_info2 {
+  .container();
+  &__box {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas:
+    "text1 text2 text2"
+    "pic pic text3"
+    "pic pic text3"
+    "text4 text4 text4";
+    gap: 60px 150px;
+    margin-bottom: 81px;
+    &--text1{
+      grid-area: text1;
+      width: 315px;
+    }
+    &--text2{
+      grid-area: text2;
+      width: 429px;
+    }
+    &--text3{
+      grid-area: text3;
+      width: 340px;
+    }
+    &--pic{
+      grid-area: pic;
+      min-width: 870px;
+      height: auto;
+    }
+    &--text4{
+      grid-area: text4;
+      width: 429px;
+    }
+  }
+
+}
+

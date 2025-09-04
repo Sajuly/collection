@@ -1,0 +1,53 @@
+.breadcrumb {
+  .container();
+  list-style: none;
+  padding-left: 40px;
+  display: flex;
+  margin-top: 40px;
+
+  @media @bw400 {
+    visibility: hidden; /* Скрывает элемент, но он занимает место */
+  }
+  &__item {
+    &:hover {
+      text-decoration: underline; /* Подчеркивание при наведении */
+    }
+    &--inactive {
+      pointer-events: none; /* Отключает кликабельность */
+      text-decoration: none; /* Убирает подчеркивание */
+      opacity: 0.6; /* Уменьшает непрозрачность для визуального эффекта */
+    }
+  }
+  &__item + &__item::before {
+    content: " / "; /* Разделитель между элементами */
+    padding: 0 5px;
+  }
+
+  &__events {
+    margin-bottom: 138px;
+    @media @bw768 {
+      margin-bottom: 90px;
+      font-size: 14px;
+    }
+    @media @bw400 {
+      margin-bottom: 50px;
+    }
+  }
+
+  &__event {
+    margin-top: 40px;
+    @media @bw1340 {
+      margin-top: 76px;
+      margin-bottom: 38px;
+    }
+    @media @bw768 {
+      margin-top: 40px;
+      margin-bottom: 41px;
+    }
+    @media @bw400 {
+      margin-top: 0px;
+      margin-bottom: 0px;
+    }
+  }
+
+}

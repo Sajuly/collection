@@ -30,6 +30,28 @@
   }
 }
 
+.show-nav {
+  body {
+    @media @bw1024 {
+      overflow: hidden;
+    }
+  }
+  .page-header__nav {
+    @media @bw1024 {
+      transform: translateX(0);
+    }
+  }
+  .page-header__nav-toggle {
+    &::before {
+      transform: translate(0px, 6px) rotate(45deg);
+      box-shadow: none;
+    }
+    &::after {
+      transform: translate(0px, -6px) rotate(-45deg);
+    }
+  }
+}
+
 // .d-flex(@wrap: wrap){
 //   display: flex;
 //   flex-wrap: @wrap;

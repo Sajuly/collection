@@ -1,51 +1,64 @@
 (function () {
     "use strict";
 
-    // ---------------- пагинатор "а нет показалось"
+  // --------------- Изменяем навигационную панель для < 1020px ------------------
 
-    document.addEventListener("DOMContentLoaded", function () {
-        const paginatorLinks = document.querySelectorAll('.js_home_paginator');
-        const pictures = document.querySelectorAll('.js-pic');
-        const years = document.querySelectorAll('.js-year');
+   const root = document.documentElement;
+  // Находим элемент навигации с id "js-navToggle"
+  const navToggle = document.querySelector("#js-navToggle")
 
-        paginatorLinks.forEach(link => {
-            link.addEventListener('click', function (event) {
-                event.preventDefault(); // Предотвращаем переход по ссылке
+  // Добавляем обработчик события "click" на элемент navToggle
+  navToggle.addEventListener("click", function() {
+    // Переключаем класс "show-nav" (mixins.less)
+    root.classList.toggle("show-nav");
+  });
 
-                // Получаем номер изображения из атрибута data-img
-                const imgNumber = this.getAttribute('data-img');
 
-                // Скрываем все картинки
-                pictures.forEach(pic => {
-                    pic.style.display = 'none';
-                });
+  // ---------------- пагинатор "а нет показалось"
 
-                // Показываем только выбранную картинку
-                const selectedPic = document.querySelector(`.js-pic[data-img="${imgNumber}"]`);
-                if (selectedPic) {
-                    selectedPic.style.display = 'block';
-                }
+  document.addEventListener("DOMContentLoaded", function () {
+      const paginatorLinks = document.querySelectorAll('.js_home_paginator');
+      const pictures = document.querySelectorAll('.js-pic');
+      const years = document.querySelectorAll('.js-year');
 
-                // Убираем класс active у всех ссылок
-                paginatorLinks.forEach(link => {
-                    link.classList.remove('active');
-                });
+      paginatorLinks.forEach(link => {
+          link.addEventListener('click', function (event) {
+              event.preventDefault(); // Предотвращаем переход по ссылке
 
-                // Добавляем класс active к выбранной ссылке
-                this.classList.add('active');
+              // Получаем номер изображения из атрибута data-img
+              const imgNumber = this.getAttribute('data-img');
 
-                // Меняем год на соответствующий
-                years.forEach(year => {
-                    year.style.display = 'none'; // Скрываем все года
-                });
-                // Показываем только выбранный год
-                const selectedYear = document.querySelector(`.js-year[data-img="${imgNumber}"]`);
-                if (selectedYear) {
-                    selectedYear.style.display = 'inline';
-                }
-            });
-        });
-    });
+              // Скрываем все картинки
+              pictures.forEach(pic => {
+                  pic.style.display = 'none';
+              });
+
+              // Показываем только выбранную картинку
+              const selectedPic = document.querySelector(`.js-pic[data-img="${imgNumber}"]`);
+              if (selectedPic) {
+                  selectedPic.style.display = 'block';
+              }
+
+              // Убираем класс active у всех ссылок
+              paginatorLinks.forEach(link => {
+                  link.classList.remove('active');
+              });
+
+              // Добавляем класс active к выбранной ссылке
+              this.classList.add('active');
+
+              // Меняем год на соответствующий
+              years.forEach(year => {
+                  year.style.display = 'none'; // Скрываем все года
+              });
+              // Показываем только выбранный год
+              const selectedYear = document.querySelector(`.js-year[data-img="${imgNumber}"]`);
+              if (selectedYear) {
+                  selectedYear.style.display = 'inline';
+              }
+          });
+      });
+  });
 
     // ---------------- Слайдер
 
