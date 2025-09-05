@@ -28,6 +28,9 @@
     letter-spacing: 0%;
     text-align: left;
     padding-right: 80px;
+    @media @bw600 {
+      padding-right: 120px;
+    }
     &:hover {
       .page-header__catalog--ct {
         color: @blue_d;
@@ -36,6 +39,11 @@
         path {
            stroke: @blue_d;
         }
+      }
+    }
+    &--ct {
+      @media @bw600 {
+        display: none;
       }
     }
   }
@@ -56,20 +64,53 @@
     justify-content: flex-end;
     align-items: center;
     gap: 50px;
+
+    @media @bw1024 {
+      position: absolute; /* Абсолютное позиционирование */
+      left: 0; /* Влево к родителю */
+      top: 100px; /* Вверх к родителю */
+      width: 100%; /* Полная ширина */
+      height: 100vh; /* Полная высота окна */
+      flex-direction: column; /* Вертикальное расположение */
+      justify-content: flex-start;
+      align-items: flex-start; /* Выравнивание по левому краю */
+      padding: 70px 30px 30px; /* Внутренние отступы */
+      background-color: @bg; /* Полупрозрачный фон */
+      transition: transform 0.4s; /* Плавный переход для transform */
+      transform: translateX(-100%); /* Сдвиг влево */
+      overflow-x: hidden; /* Скрыть горизонтальную прокрутку */
+      overflow-y: auto; /* Вертикальная прокрутка при необходимости */
+    }
+    @media @bw600 {
+      padding: 60px 20px 30px;
+    }
+
+    &--text {
+      display: none;
+      @media @bw1024 {
+        display: block;
+      }
+    }
+
+    &--media1024 {
+      @media @bw1024 {
+        display: flex;
+        gap: 15px;
+      }
+    }
+
   }
 
   &__right-block {
-    position: relative;
-    display: flex; /* Использует Flexbox для расположения элементов внутри блока */
-    justify-content: flex-end; /* Выравнивает элементы по горизонтали вправо */
-    align-items: center; /* Выравнивает элементы по вертикали по центру */
-    width: 202px; /* Устанавливает фиксированную ширину блока */
-    @media @bw1660 {
-      width: 152px;
-    }
+    display:none;
+
     @media @bw1024 {
       width: auto;
-      margin-left: auto;
+      position: relative;
+      display: flex; /* Использует Flexbox для расположения элементов внутри блока */
+      justify-content: flex-end; /* Выравнивает элементы по горизонтали вправо */
+      align-items: center; /* Выравнивает элементы по вертикали по центру */
+      width: 202px; /* Устанавливает фиксированную ширину блока */
     }
   }
 

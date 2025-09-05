@@ -1,21 +1,65 @@
 .home_kit-haring {
   .container();
   margin-bottom: 145px;
+  @media @bw1340 {
+    margin-bottom: 115px;
+  }
+  @media @bw768 {
+    margin-bottom: 75px;
+  }
 
   &__container {
     display: flex;
     gap: 215px;
+    @media @bw768 {
+      display: grid;
+      grid-template-columns: 260px 1fr;
+      grid-template-areas:
+        "title title"
+        "p  photo";
+      gap: 42px;
+    }
+    @media @bw400 {
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-areas:
+        "title"
+        "p"
+        "photo"
+        "btn";
+      gap: 30px;
+    }
   }
-
+  &__title768 {
+    display: none;
+    @media @bw768 {
+      grid-area: title;
+      display: block;
+      text-align: left;
+      font-size: 60px;
+    }
+    @media @bw400 {
+      text-align: center;
+    }
+  }
   &__text {
-    max-width: 322px;
-
+    width: 322px;
+    @media @bw1340 {
+      width: 260px;
+    }
+    @media @bw400 {
+      width: 100%;
+    }
 
     &--title {
       white-space: nowrap;
       margin-bottom: 40px;
+      @media @bw768 {
+        display: none;
+      }
     }
     &--p {
+      grid-area: p;
       font-family: @font1;
       font-size: 18px;
       font-weight: 400;
@@ -24,17 +68,34 @@
   }
 
   &__photo {
+    grid-area: photo;
     display: flex;
     flex-direction: column;
     position: relative;
+    @media @bw400 {
+      position: static;
+    }
   }
 
   &__btn {
+    grid-area: btn;
     width: 262px;
     position: absolute;
     top: 550px;
     left: -200px;
     z-index: 1;
+    @media @bw1340 {
+      top: 470px;
+    }
+    @media @bw768 {
+      width: 188px;
+      top: 290px;
+      left: -130px;
+    }
+    @media @bw400 {
+      position: static;
+      width: 100%;
+    }
   }
 
 }

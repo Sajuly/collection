@@ -2,12 +2,36 @@
   .container();
   margin-top: 40px;
   margin-bottom: 198px;
+  @media @bw1340 {
+    margin-bottom: 170px;
+  }
+  @media @bw768 {
+    margin-bottom: 100px;
+  }
+  @media @bw400 {
+    margin-bottom: 64px;
+  }
 
   &__bg {
     position: relative;
-
+    @media @bw768 {
+      height: 400px;
+    }
     &--svg {
       display: block;
+      width: 100%;
+      height: auto;
+      @media @bw400 {
+        display: none;
+      }
+    }
+    &--svg320 {
+      display: none;
+      @media @bw400 {
+        display: block;
+        width: 100%;
+        height: 216px;
+      }
     }
 
     &--paginator {
@@ -17,6 +41,11 @@
       top: 30px;
       right: 0;
       z-index: 1;
+      @media @bw400 {
+        max-width: 70px;
+        top: 0;
+        right: 120px;
+      }
     }
 
     &--box {
@@ -26,42 +55,83 @@
       gap: 30px;
       font-size: 30px;
       font-family: @font3;
+      @media @bw400 {
+        gap: 20px;
+        font-size: 20px;
+      }
     }
 
     &--pic {
-     display: none;
-     position: absolute;
-     top: 27px; /* Устанавливаем верхнюю границу */
-     left: 305px; /* Устанавливаем левую границу */
-     z-index: 1; /* Устанавливаем z-index, чтобы изображение было выше SVG */
+      display: none;
+      position: absolute;
+      top: 27px; /* Устанавливаем верхнюю границу */
+      left: 305px; /* Устанавливаем левую границу */
+      z-index: 1; /* Устанавливаем z-index, чтобы изображение было выше SVG */
+      @media @bw1340 {
+        max-width: 470px;
+        height: auto;
+        left: 240px;
+      }
+      @media @bw768 {
+        max-width: 270px;
+        top: 15px;
+        left: 140px;
+      }
+      @media @bw400 {
+        max-width: 170px;
+        top: 40px;
+        left: 120px;
+      }
     }
     &--pic[data-img="87"] {
       display: block;
     }
 
     &--bottom {
-     position: absolute;
-     min-width: 228px;
-     bottom: 0;
-     left: 0;
-     display: flex;
-     flex-direction: column;
-     z-index: 1;
+      position: absolute;
+      width: 235px;
+      bottom: 0;
+      left: 0;
+      display: flex;
+      flex-direction: column;
+      z-index: 1;
+      @media @bw1340 {
+        width: 200px;
+      }
+      @media @bw768 {
+        width: 272px;
+      }
+      @media @bw400 {
+        width: 100%;
+      }
+    }
+    &--text-year {
+      display: flex;
+      flex-wrap: nowrap;
+      align-items: flex-end;
+      justify-content: space-between;
+
     }
     &--text {
       position: relative;
+      align-items: flex-end;
       font-size: 20px;
       letter-spacing: 2px;
-      flex-wrap: nowrap;
+      margin-bottom: 15px;
+      @media @bw1340 {
+        font-size: 18px;
+      }
     }
     &--year {
       display: none;
-      position: absolute;
-      top: -30px;
-      left: 145px;
-      width: 100px;
       font-size: 55px;
       font-family: @font3_bold;
+      @media @bw1340 {
+        font-size: 40px;
+      }
+      @media @bw768 {
+        font-size: 40px;
+      }
     }
     &--year[data-img="87"] {
       display: block;
@@ -77,4 +147,7 @@
 .js_home_paginator.active {
     font-size: 45px; /* Увеличенный размер шрифта для активного элемента */
     color: @green; /* Зеленый цвет для активного элемента */
+    @media @bw768 {
+      font-size: 30px
+    }
 }
