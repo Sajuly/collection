@@ -155,6 +155,7 @@
   // Функция для изменения цвета сердца по его id
   function toggleHeartColor(id) {
     const heart = document.getElementById(id);
+    console.log(heart);
     const path = heart.querySelector('path');
     const currentFill = path.getAttribute('fill');
     console.log("start", currentFill);
