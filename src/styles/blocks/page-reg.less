@@ -1,0 +1,112 @@
+.page-reg{
+    padding-bottom: 150px;
+    @media @bw1340 {
+        padding-bottom: 116px;
+    }
+    @media @bw768 {
+        padding-bottom: 78px;
+    }
+    a{
+        color: @blue_l;
+    }
+    &__title{
+        margin-top: 28px;
+        margin-bottom: 3px;
+        font-size: 60px;
+        letter-spacing: 2px;
+        @media @bw1340 {
+            margin-top: -2px;
+        }
+        @media @bw768 {
+            margin-top: -14px;
+        }
+    }
+    &__subtitle{
+        justify-content: center;
+        margin-bottom: 44px;
+        gap: 0 23px;
+        @media @bw768 {
+            display: block;
+            text-align: center;
+            margin-bottom: 25px;
+            a{
+                display: block;
+                margin-top: 10px;
+            }
+        }
+    }
+    &__form{
+        width: 100%;
+        max-width: 934px;
+        margin-left: auto;
+        margin-right: auto;
+
+        .form__column{
+            padding-bottom: 26px;
+            @media @bw768 {
+                width: 100%;
+                padding-bottom: 9px;
+            }
+        }
+
+        .form__column:nth-child(1){
+            order: 0;
+        }
+        .form__column:nth-child(2){
+            order: 2;
+        }
+        .form__column:nth-child(3){
+            order: 6;
+        }
+        .form__column:nth-child(4){
+            order: 7;
+        }
+        .form__column:nth-child(5){
+            order: 1;
+        }
+        .form__column:nth-child(6){
+            order: 3;
+        }
+        .form__column:nth-child(7){
+            order: 8;
+        }
+        .form__column:nth-child(8){
+            order: 9;
+        }
+        .form__input{
+            height: 30px;
+            margin-top: 18px;
+            @media @bw1340 {
+                margin-top: 20px;
+            }
+            @media @bw768 {
+                margin-top: 15px;
+            }
+        }
+        .field__data-input{
+            color: #acacac;
+            font-size: 16px;
+        }
+    }
+    .form-checkboxs{
+        padding-top: 10px;
+        @media @bw768 {
+            padding-top: 29px;
+        }
+    }
+    .form-checkboxs__check{
+        padding-left: 36px;
+        font-size: 16px;
+        max-width: 754px;
+        @media @bw768 {
+            padding-left: 28px;
+            font-size: 14px;
+        }
+    }
+    .form__btns{
+        padding-top: 54px;
+        @media @bw768 {
+            padding-top: 32px;
+        }
+    }
+}

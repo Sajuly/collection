@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  @@include('blocks/head.html')
+  <title>catalog</title>
+</head>
+
+<body class="body">
+@@include('blocks/page-header.html')
+
+<div aria-label="Breadcrumb">
+
+  <div class="breadcrumb breadcrumb__catalog">
+    <a href="index.html" class="breadcrumb__item">Главная&nbsp;</a>
+    <a href="#" class="breadcrumb__item breadcrumb__item--inactive">Каталог</a>
+  </div>
+
+  <div class="breadcrumb breadcrumb__catalog--arrow-back">
+    <a href="index.html">
+      <svg class="" width="24" height="24">
+        <use xlink:href="assets/icons/symbols.svg#arrow-left"></use>
+      </svg>
+    </a>
+  </div>
+
+</div>
+
+<main>
+
+  <div class="catalog">
+    <h1 class="catalog__title title">Каталог</h1>
+
+    <div class="catalog_btn-box">
+      <button class="catalog__open-filter js-open-filter btn">Фильтр</button>
+      <button type="reset" class="catalog__reset-filter">Сбросить</button>
+    </div>
+
+    <div class="page catalog__list">
+      @@include('blocks/catalog/catalog_hide-menu.html')
+
+      <div class="catalog__content">
+        @@include('blocks/catalog/catalog_list.html')
+        @@include('blocks/catalog/pagination.html')
+      </div>
+
+    </div>
+
+  </div>
+
+</main>
+
+@@include('blocks/page-footer.html')
+@@include('blocks/connecting-scripts.html')
+
+</body>
+</html>

@@ -1,0 +1,72 @@
+.catalog {
+  .container();
+
+  &__title{
+    margin-top: 27px;
+    margin-bottom: 51px;
+    @media @bw1340{
+      margin-top: 20px;
+      margin-bottom: 31px;
+    }
+    @media @bw768{
+      text-align: left;
+      margin-top: 25px;
+      margin-bottom: 26px;
+    }
+  }
+
+  &__btn-box {
+    @media @bw768 {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  &__open-filter {
+    display: none;
+    @media @bw768{
+      display: block;
+      width: 100%;
+    }
+  }
+
+  &__reset-filter {
+    display: none;
+    font-size: 16px;
+    font-family: @font1;
+    color: @blue_d;
+    padding: 0;
+    border: 0;
+    outline: none; // для удаления контура элемента
+    cursor: pointer;
+    color: @blue_l;
+    &:hover{
+      color: @blue_d;
+    }
+    @media @bw880{
+      margin-bottom: 43px;
+    }
+    @media @bw768{
+      display: block;
+      margin-top: 30px;
+      margin-bottom: 40px;
+    }
+  }
+
+  &__list {
+    display: flex;
+  }
+
+  &__content{
+    width: calc(100% - 300px);
+    padding-left: 23px;
+    @media @bw1660 {
+    width: calc(100% - 265px);
+    }
+    @media @bw1340{
+        width: 100%;
+        padding-left: 0;
+    }
+  }
+
+}

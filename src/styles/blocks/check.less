@@ -1,0 +1,21 @@
+.check {
+  &__input{
+    opacity: 0;
+    position: absolute;
+  }
+  &__input + &__mark {
+    display: inline-flex;
+    width: 16px;
+    height: 16px;
+    border: 1px solid @black;
+    &::after {
+      content: "";
+    }
+  }
+  &__input:checked + &__mark {
+    background: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 11 10'%3e%3cpath fill='none' stroke='%23111' stroke-linecap='round' stroke-linejoin='round' stroke-width='1' d='M1 5.36633L2.84887 7.89861C3.42835 8.69229 4.61778 8.67687 5.17652 7.86842L9.92327 1' /%3e%3c/svg%3e");
+    background-size: 10px 10px;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+}

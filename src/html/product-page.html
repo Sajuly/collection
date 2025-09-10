@@ -1,0 +1,191 @@
+@@include('blocks/head.html')
+
+<body class="body">
+@@include('blocks/page-header.html', {'auth': false})
+
+<div aria-label="Breadcrumb">
+  <div class="breadcrumb breadcrumb__event">
+    <a href="index.html" class="breadcrumb__item">Главная&nbsp;</a>
+    <a href="catalog.html" class="breadcrumb__item">Каталог&nbsp;</a>
+    <a href="events.html" class="breadcrumb__item breadcrumb__item--inactive">Постер Andy Mouse | 60-60 см</a>
+  </div>
+</div>
+
+<main class="main">
+  <div class="container-in">
+    <article class="product-page">
+      <section class="product-page__heading-mobile">
+        <h1 class="product-page__title">Постер Andy Mouse | 60-60 см</h1>
+        <button class="product-page__favorites svg-ico">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+                d="M11.995 7.2332C10.5455 5.61 8.12832 5.17336 6.31215 6.65973C4.49599 8.1461 4.2403 10.6312 5.66654 12.3892L11.995 18.25L18.3235 12.3892C19.7498 10.6312 19.5253 8.13047 17.6779 6.65973C15.8305 5.189 13.4446 5.61 11.995 7.2332Z"
+                fill="#0154BB" stroke="#0154BB" stroke-width="1.5" stroke-linecap="round"
+                stroke-linejoin="round"></path>
+          </svg>
+        </button>
+      </section>
+      <div class="product-page__top">
+        <a href="assets/images/product/product.png" class="product-page__image js-open-img">
+          <picture class="product-page__pic w-100">
+            <source media="(max-width: 1169px)" type="image/webp"
+                    srcset="assets/images/product/product.webp">
+            <source media="(max-width: 1169px)" srcset="assets/images/product/product.png">
+            <source type="image/webp" srcset="assets/images/product/product.webp">
+            <img src="assets/images/product/product.png" alt="banner"
+                 class="product-page__img js-product-img">
+          </picture>
+        </a>
+        <div class="product-page__info">
+          <h1 class="product-page__title">Постер Andy Mouse | 60-60 см</h1>
+          <div class="product-page__price">1 850 ₽</div>
+          <div class="radio product-page__radio d-flex">
+            <label class="radio__item">
+              <input class="radio__input is-hidden" type="radio" name="format" value="seminar"
+                     checked>
+              <span class="radio__mark"></span>
+              <span class="radio__label">Бумажный постер</span>
+            </label>
+
+            <label class="radio__item">
+              <input class="radio__input is-hidden" type="radio" name="format" value="concert">
+              <span class="radio__mark"></span>
+              <span class="radio__label">Электронный постер</span>
+            </label>
+          </div>
+          <div class="product-page__quantity">
+            <span class="product-page__quantity-text">Количество</span>
+            <div class="product-page__quantity-cnt d-flex">
+              <a href="#" class="product-page__quantity-minus svg-ico js-plus">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                     xmlns="http://www.w3.org/2000/svg">
+                  <path d="M12 5.75V18.25" stroke="#111111" stroke-width="1.5"
+                        stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M18.25 12H5.75" stroke="#111111" stroke-width="1.5"
+                        stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </a>
+              <input type="text" value="1" name="quantity" class="product-page__quantity-input">
+              <a href="#" class="product-page__quantity-minus svg-ico js-minus">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                     xmlns="http://www.w3.org/2000/svg">
+                  <path d="M18.25 12H5.75" stroke="#111111" stroke-width="1.5"
+                        stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+          <div class="product-page__btns">
+            <button class="product-page__btn btn">Добавить в корзину</button>
+            <button class="product-page__favorites svg-ico">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                   xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M11.995 7.2332C10.5455 5.61 8.12832 5.17336 6.31215 6.65973C4.49599 8.1461 4.2403 10.6312 5.66654 12.3892L11.995 18.25L18.3235 12.3892C19.7498 10.6312 19.5253 8.13047 17.6779 6.65973C15.8305 5.189 13.4446 5.61 11.995 7.2332Z"
+                    fill="#0154BB" stroke="#0154BB" stroke-width="1.5" stroke-linecap="round"
+                    stroke-linejoin="round"/>
+              </svg>
+            </button>
+          </div>
+          <div class="product-page__delivery">
+            <div class="product-page__delivery-ico svg-ico">
+              <svg width="24" height="24">
+                <use xlink:href="assets/icons/symbols.svg#delivery"></use>
+              </svg>
+            </div>
+            Бесплатная доставка
+          </div>
+        </div>
+      </div>
+      <div class="product-page__description content">
+        <div class="product-page__description-title">Описание</div>
+        <p>Энди Маус — серия шелкографических принтов, созданная американским художником Китом Харингом в
+          1986 году. Персонаж Энди Маус-это сплав диснеевского Микки Мауса и Энди Уорхола.</p>
+        <p>Серия состоит из четырех шелкографических принтов на тканой бумаге, подписанных и датированных
+          карандашом Харингом и Уорхолом.</p>
+        <ul>
+          <li>Дата выхода серии 1986 год</li>
+          <li>Идейный вдохновитель — Энди Уорхол</li>
+          <li>Размер постера 60-60 см</li>
+        </ul>
+      </div>
+
+      <div class="product-page__series">
+        <h3 class="product-page__series-title title">Вся серия Andy Mouse 1986</h3>
+        <a href="#" class="product-page__series-link">1. Andy Mouse Green </a>
+        <a href="#" class="product-page__series-link">2. Andy Mouse Orange </a>
+        <a href="#" class="product-page__series-link">3. Andy Mouse Blue </a>
+        <a href="#" class="product-page__series-link">4. Andy Mouse Yellow </a>
+        <a href="#" class="product-page__series-link">5. Andy Mouse Green B</a>
+      </div>
+
+      <div class="product-page__related owl-carousel">
+        @@loop('blocks/catalog/article-card.html', [
+        {
+        'class': 'product__item bg-green',
+        'element-class': 'product__item',
+        'title': 'Заголовок 1',
+        'attr': '<span>Постер</span> | 60-60 см',
+        'img': 'assets/images/product/product1.png',
+        'img_webp': 'assets/images/product/product1.webp',
+        'price': '850',
+        'heart': 'heart13'
+        },
+        {
+        'class': 'product__item bg-orange',
+        'element-class': 'product__item',
+        'title': 'Заголовок 2',
+        'attr': '<span>Постер</span> | 60-60 см',
+        'img': 'assets/images/product/product2.png',
+        'img_webp': 'assets/images/product/product2.webp',
+        'price': '850',
+        'heart': 'heart14'
+        },
+        {
+        'class': 'product__item bg-blue',
+        'element-class': 'product__item',
+        'title': 'Заголовок 3',
+        'attr': '<span>Постер</span> | 60-60 см',
+        'img': 'assets/images/product/product3.png',
+        'img_webp': 'assets/images/product/product3.webp',
+        'price': '850',
+        'heart': 'heart15'
+        },
+        {
+        'class': 'product__item bg-yellow',
+        'element-class': 'product__item',
+        'title': 'Заголовок 2',
+        'attr': '<span>Постер</span> | 60-60 см',
+        'img': 'assets/images/product/product4.png',
+        'img_webp': 'assets/images/product/product4.webp',
+        'price': '850',
+        'heart': 'heart16'
+        },
+        {
+        'class': 'product__item bg-blue',
+        'element-class': 'product__item',
+        'title': 'Заголовок 3',
+        'attr': '<span>Постер</span> | 60-60 см',
+        'img': 'assets/images/product/product3.png',
+        'img_webp': 'assets/images/product/product3.webp',
+        'price': '850',
+        'heart': 'heart17'
+        },
+        {
+        'class': 'product__item bg-yellow',
+        'element-class': 'product__item',
+        'title': 'Заголовок 2',
+        'attr': '<span>Постер</span> | 60-60 см',
+        'img': 'assets/images/product/product4.png',
+        'img_webp': 'assets/images/product/product4.webp',
+        'price': '850',
+        'heart': 'heart18'
+        }
+        ])
+      </div>
+    </article>
+  </div>
+</main>
+
+
+@@include('blocks/page-footer.html')

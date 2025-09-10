@@ -1,0 +1,200 @@
+.form {
+  position: relative;
+  &__title {
+    font-size: 24px;
+    font-weight: 500;
+    margin-top: 0;
+    margin-bottom: 20px;
+    line-height: 1;
+  }
+  &__line {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
+  &__line ~ &__line {
+    margin-top: 15px;
+  }
+  &__columns {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -30px;
+    margin-right: -30px;
+    @media @bw768 {
+      display: block;
+    }
+  }
+  &__column {
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-bottom: 15px;
+    padding-top: 15px;
+    &--100 {
+      width: 100%;
+    }
+    &--50 {
+      width: 50%;
+    }
+  }
+  &__close {
+    position: absolute;
+    z-index: 1;
+    right: -20px;
+    top: -20px;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+  }
+  &__label {
+    display: block;
+
+    .mark {
+      display: inline-flex;
+      color: @red;
+    }
+  }
+  &__input,
+  &__select {
+    font-size: 16px;
+    padding: 0 0px;
+    outline: none;
+    box-shadow: none;
+    height: 45px;
+    border: 0;
+    background: none;
+    color: @gray;
+    border-bottom: 1px solid @gray_d;
+    border-radius: 0px;
+    width: 100%;
+    @media @bw768 {
+      font-size: 14px;
+    }
+  }
+  &__input-medium {
+    height: 55px;
+  }
+  &__select {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    background-repeat: no-repeat;
+    background-position: calc(100% - 5px) center;
+    background-size: 20px auto;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M17 9.5L12 14.5L7 9.5' fill='%23000'%3E%3C/path%3E%3C/svg%3E");
+  }
+  &__input.error{
+    border-bottom-color: @red;
+  }
+  &__input + .error{
+    color: @red;
+    font-size: 14px;
+    display: inline-flex;
+    padding-top: 5px;
+  }
+  &__check {
+    position: absolute;
+    opacity: 0;
+    & + label {
+      position: relative;
+      padding-left: 30px;
+      display: block;
+      &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 16px;
+        height: 16px;
+        border: 1px solid #111;
+      }
+    }
+  }
+
+  &__radio {
+    position: absolute;
+    opacity: 0;
+    & + label {
+      position: relative;
+      padding-left: 30px;
+      display: block;
+      &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 20px;
+        height: 20px;
+        border: 1px solid #ccc;
+        border-radius: 50%;
+        box-sizing: border-box;
+      }
+    }
+    &:checked + label {
+      &::before {
+        border-color: @blue_l;
+        background: @blue_l;
+        background-size: contain;
+        padding: 7px;
+        background-clip: content-box;
+      }
+    }
+  }
+  &__footer {
+    padding-top: 15px;
+  }
+  fieldset {
+    margin: 0 0 20px;
+    padding: 0;
+    border: 0;
+  }
+  legend {
+    font-weight: 600;
+    margin-bottom: 32px;
+    padding: 0;
+  }
+}
+
+
+
+
+
+.form-check-boxs{
+  &__check{
+    position: relative;
+    padding-left: 26px;
+    display: block;
+  }
+  &__mark{
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+}
+
+
+
+
+#js-slider {
+  .ui-slider-horizontal {
+    height: 1px;
+    background-color: @black;
+  }
+  .ui-slider .ui-slider-handle {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: @blue_l;
+    border: none;
+    outline: none;
+    margin-top: -1.5px;
+  }
+}
+.amount-range {
+  padding-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  input {
+    background-color: transparent;
+    border: 0;
+  }
+}

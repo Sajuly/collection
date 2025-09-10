@@ -1,0 +1,107 @@
+<form action="#" class="catalog_hide-menu form">
+
+  <button class="catalog_hide-menu__svg js-close-filter ">
+    <svg id='close' width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M17.25 6.75L6.75 17.25" stroke="black" stroke-width="1.5" stroke-linecap="round"
+            stroke-linejoin="round"/>
+      <path d="M6.75 6.75L17.25 17.25" stroke="black" stroke-width="1.5" stroke-linecap="round"
+            stroke-linejoin="round"/>
+    </svg>
+  </button>
+
+  <div class="catalog_hide-menu__hide-title title">
+    Фильтр
+    <button type="reset" class="catalog_hide-menu__reset js-reset-filter">Сбросить</button>
+  </div>
+
+  <fieldset class="catalog_hide-menu__block">
+    <legend>Коллекция</legend>
+
+    <label class="check">
+      <input type="checkbox" name="year" class="catalog_hide-menu__hide check__input">
+      <span class="check__mark"></span>
+      <span class="check__label">1982 года</span>
+    </label>
+
+    <label class="check">
+      <input type="checkbox" name="year" class="catalog_hide-menu__hide check__input" checked>
+      <span class="check__mark"></span>
+      <span class="check__label">1986 года</span>
+    </label>
+
+    <label class="check">
+      <input type="checkbox" name="year" class="catalog_hide-menu__hide check__input">
+      <span class="check__mark"></span>
+      <span class="check__label">1987 года</span>
+    </label>
+
+    <label class="check">
+      <input type="checkbox" name="year" class="catalog_hide-menu__hide check__input">
+      <span class="check__mark"></span>
+      <span class="check__label">1988 года</span>
+    </label>
+
+    <label class="check">
+      <input type="checkbox" name="year" class="catalog_hide-menu__hide  check__input">
+      <span class="check__mark"></span>
+      <span class="check__label">1989 года</span>
+    </label>
+
+  </fieldset>
+
+  <fieldset class="catalog_hide-menu__block">
+    <legend>Наличие</legend>
+    <div class="radio">
+      <label class="radio__item">
+        <input class="catalog_hide-menu__hide radio__input" type="radio" name="format" value="1">
+        <span class="radio__mark"></span>
+        <span class="radio__label">В наличие</span>
+      </label>
+
+      <label class="radio__item">
+        <input class="catalog_hide-menu__hide radio__input" type="radio" name="format" value="2">
+        <span class="radio__mark"></span>
+        <span class="radio__label">Под заказ</span>
+      </label>
+
+      <label class="radio__item">
+        <input class="catalog_hide-menu__hide radio__input" type="radio" name="format" value="3">
+        <span class="radio__mark"></span>
+        <span class="radio__label">Все</span>
+      </label>
+    </div>
+  </fieldset>
+
+  <fieldset class="catalog_hide-menu__block">
+    <legend>Ориентация</legend>
+    <label class="check">
+      <input class="catalog_hide-menu__hide check__input" type="checkbox" name="or" value="1">
+      <span class="check__mark"></span>
+      <span class="check__label">Книжная</span>
+    </label>
+    <label class="check">
+      <input class="catalog_hide-menu__hide check__input" type="checkbox" name="or" value="2">
+      <span class="check__mark"></span>
+      <span class="check__label">Альбомная</span>
+    </label>
+  </fieldset>
+
+  <fieldset class="catalog_hide-menu__block catalog_hide-menu__prise-slider">
+    <legend>Цена, ₽</legend>
+    <div class="check" id="js-slider">
+      <div id="slider-range"></div>
+      <div class="amount-range" id="amount">
+        <span class="t1"></span>
+        <span class="t2"></span>
+      </div>
+    </div>
+  </fieldset>
+
+  <div class="catalog_hide-menu__submit">
+    <button type="submit" class="btn catalog_hide-menu__btn">Применить</button>
+  </div>
+  <div class="catalog_hide-menu__reset">
+    <button type="reset" class="catalog_hide-menu__reset catalog_hide-menu__reset-show">Сбросить</button>
+  </div>
+
+</form>

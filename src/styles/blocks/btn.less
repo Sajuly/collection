@@ -1,20 +1,21 @@
 .btn {
-  height: 52px;
-  text-align: center;
-  color: @white; /* Белый текст */
-  background-color: @blue_d;
-  border: none; /* Убираем рамку */
-  font-size: 16px; /* Размер шрифта */
-  padding: 15px 10px 15px 10px;
-  cursor: pointer; /* Указатель курсора при наведении */
+    font-family: @font1; /* Шрифт */
+    text-decoration: none; /* Без подчеркивания */
+    line-height: 1.1; /* Высота строки */
+    color: @white; /* Цвет текста */
+    background-color: @blue_d; /* Цвет фона */
+    border: 0; /* Без границы */
+    display: inline-flex; /* Flexbox */
+    justify-content: center; /* Центрирование по горизонтали */
+    align-items: center; /* Центрирование по вертикали */
+    min-height: 52px; /* Минимальная высота */
+    min-width: 228px; /* Минимальная ширина */
+    padding: 10px 25px; /* Отступы (верх/низ, лево/право) */
+    cursor: pointer; /* Курсор при наведении */
+    transition: all 0.2s; /* Плавный переход */
 
-  font-family: @font1;
-  font-size: 18px;
-  font-weight: 400;
-  line-height: 22px;
-  letter-spacing: 0%;
-
-  &:hover {
-    background-color: @blue_l;
-  }
+    &:hover {
+        color: @white; /* Цвет текста при наведении */
+        background-color: @blue_l; /* Цвет фона при наведении */
+    }
 }
