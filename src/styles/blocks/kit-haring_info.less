@@ -1,6 +1,9 @@
 .kit-haring_info {
   .container();
   margin-top: 55px;
+  @media @bw768 {
+     margin-top: 31px;
+  }
 
   &__box {
     display: grid;
@@ -12,22 +15,66 @@
     "text3 text3 text3";
     gap: 80px 200px;
     margin-bottom: 81px;
+    @media @bw768 {
+      grid-template-columns: 230px 1fr 1fr;
+      grid-template-areas:
+        "text1 pic2 pic2"
+        "pic1 pic2 pic2"
+        "pic1 text2 text2"
+        "text3 text3 text3";
+      gap: 41px 60px;
+    }
+    @media @bw400 {
+      grid-template-columns: 1fr;
+      grid-template-areas:
+        "text1"
+        "pic2"
+        "text2"
+        "text3";
+      gap: 41px 60px;
+    }
     &--text1{
       padding-top: 70px;
       grid-area: text1;
       width: 323px;
+      @media @bw768 {
+         width: 231px;
+      }
+      @media @bw400 {
+         width: 280px;
+         justify-self: center;
+         padding-top: 0;
+      }
     }
     &--text2{
       grid-area: text2;
       width: 323px;
+      @media @bw400 {
+         width: 280px;
+         justify-self: center;
+      }
     }
     &--text3{
       grid-area: text3;
       width: 408px;
       margin-left: 323px;
+      @media @bw768 {
+         margin-left: 150px;
+      }
+      @media @bw400 {
+         width: 280px;
+         justify-self: center;
+         margin-left: 0;
+      }
     }
     &--pic-mini{
       grid-area: pic1;
+      @media @bw768 {
+         width: 165px;
+      }
+      @media @bw400 {
+         display: none;
+      }
     }
     &--pic-max{
       grid-area: pic2;

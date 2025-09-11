@@ -10,26 +10,70 @@
     "text4 text4 text4";
     gap: 60px 150px;
     margin-bottom: 81px;
+
+    @media @bw768 {
+      grid-template-columns: 1fr;
+      grid-template-areas:
+      "text1 "
+      "text2"
+      "pic"
+      "text3"
+      "text4";
+      gap: 40px;
+    }
     &--text1{
       grid-area: text1;
       width: 315px;
+      @media @bw400 {
+        width: 280px;
+        justify-self: center;
+      }
     }
     &--text2{
       grid-area: text2;
       width: 429px;
+      @media @bw768 {
+        width: 385px;
+        justify-self: end;
+      }
+      @media @bw400 {
+        width: 280px;
+        justify-self: center;
+      }
     }
     &--text3{
       grid-area: text3;
       width: 340px;
+      @media @bw768 {
+        width: 415px;
+        justify-self: end;
+      }
+      @media @bw400 {
+        width: 280px;
+        justify-self: center;
+      }
     }
     &--pic{
       grid-area: pic;
       min-width: 870px;
       height: auto;
+      @media @bw768 {
+        min-width: 708px;
+      }
+      @media @bw400 {
+        min-width: 280px;
+      }
     }
     &--text4{
       grid-area: text4;
       width: 429px;
+      @media @bw768 {
+        width: 455px;
+      }
+      @media @bw400 {
+        width: 280px;
+        justify-self: center;
+      }
     }
   }
 

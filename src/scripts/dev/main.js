@@ -150,43 +150,56 @@
     $(".catalog_hide-menu").removeClass("active");
   });
 
-  //------------------- Покрасить сердечко catalog ---------------------------
+  //-------------------Закрасить и посчитать сердечки catalog ---------------------------
 
   // Функция для изменения цвета сердца по его id
   function toggleHeartColor(id) {
     const heart = document.getElementById(id);
-    console.log(heart);
     const path = heart.querySelector('path');
     const currentFill = path.getAttribute('fill');
-    console.log("start", currentFill);
+
+    const h_heart = document.getElementById('head_heart');
+    const h_path = h_heart.querySelector('path');
+
+    // Получаем текущий счетчик
+    const countElement = document.getElementById('heartCount');
+    let count = parseInt(countElement.textContent);
+
 
     // Проверяем текущий цвет заливки и меняем его
     if (currentFill === 'none' || currentFill === null) {
-      console.log("1", currentFill);
-      path.setAttribute('fill', 'blue'); // Меняем на синий
-      path.setAttribute('stroke', 'blue'); // Меняем цвет обводки на синий
-    }
-    else {
-      console.log("3", currentFill);
+      path.setAttribute('fill', '#4497e4'); // Меняем на синий
+      path.setAttribute('stroke', '#4497e4'); // Меняем цвет обводки на синий
+      count += 1; // Увеличиваем счетчик
+    } else {
       path.setAttribute('fill', 'none'); // Возвращаем на прозрачный
       path.setAttribute('stroke', '#111111'); // Возвращаем цвет обводки на черный
+      count -= 1; // Уменьшаем счетчик
+    }
+
+    // Обновляем текст счетчика
+    countElement.textContent = count;
+
+    // Меняем цвет сердца в зависимости от счетчика
+    if (count > 0) {
+      h_path.setAttribute('fill', '#4497e4'); // Синее, если больше нуля
+      h_path.setAttribute('stroke', '#4497e4');
+      countElement.style.color = '#111111'; // Показываем счетчик
+    } else {
+      h_path.setAttribute('fill', 'none'); // Прозрачное, если 0
+      h_path.setAttribute('stroke', '#111111');
+      countElement.style.color = '#F3F3F3'; // Скрываем счетчик
     }
   }
 
   // Добавляем обработчики событий для каждого сердца
-  document.getElementById('heart1').parentNode.addEventListener('click', function() {toggleHeartColor('heart1');});
-  document.getElementById('heart2').parentNode.addEventListener('click', function() {toggleHeartColor('heart2');});
-  document.getElementById('heart3').parentNode.addEventListener('click', function() {toggleHeartColor('heart3');});
-  document.getElementById('heart4').parentNode.addEventListener('click', function() {toggleHeartColor('heart4');});
-  document.getElementById('heart5').parentNode.addEventListener('click', function() {toggleHeartColor('heart5');});
-  document.getElementById('heart6').parentNode.addEventListener('click', function() {toggleHeartColor('heart6');});
-  document.getElementById('heart7').parentNode.addEventListener('click', function() {toggleHeartColor('heart7');});
-  document.getElementById('heart8').parentNode.addEventListener('click', function() {toggleHeartColor('heart8');});
-  document.getElementById('heart9').parentNode.addEventListener('click', function() {toggleHeartColor('heart9');});
-  document.getElementById('heart10').parentNode.addEventListener('click', function() {toggleHeartColor('heart10');});
-  document.getElementById('heart11').parentNode.addEventListener('click', function() {toggleHeartColor('heart11');});
-  document.getElementById('heart12').parentNode.addEventListener('click', function() {toggleHeartColor('heart12');});
-
+  for (let i = 1; i <= 12; i++) {
+    const heart = document.getElementById(`heart${i}`);
+    heart.addEventListener('click', function(event) {
+      event.stopPropagation(); // Останавливаем всплытие события
+      toggleHeartColor(`heart${i}`);
+    });
+  }
 
 
   // ---------------- Google map -----------------------------

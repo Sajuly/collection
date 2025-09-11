@@ -15,6 +15,9 @@
     align-items: center;
     justify-content: center;
     margin-bottom: 60px;
+    @media @bw400 {
+      margin-bottom: 30px;
+    }
   }
 
   &__info {
@@ -22,14 +25,20 @@
     display: flex;
     margin-bottom: 55px;
     gap: 175px;
+    @media @bw768 {
+      gap: 92px;
+    }
+    @media @bw400 {
+      display: block;
+    }
     &--catalog {
       width: 150px;
       flex-direction: column;
     }
     &--list {
-       display: flex;
-       flex-direction: column;
-       gap: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
     }
     &--buyer {
       flex-direction: column;
@@ -38,6 +47,9 @@
     &--connect {
       flex-direction: column;
       margin-left: auto;
+      @media @bw400 {
+        display:none;
+      }
     }
     &--text {
       text-align: right;
@@ -45,6 +57,33 @@
     &--svg {
       display: flex;
       gap: 20px;
+    }
+    // -- на 400px---
+    &--catalog400 {
+      display: flex;
+      justify-content: space-between;
+    }
+    &--connect400 {
+      display: none;
+      @media @bw400 {
+        width: 80px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        gap: 10px;
+      }
+    }
+    &--text400 {
+      margin-block-end: 10px;
+    }
+    &--svg400 {
+      @media @bw400 {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 10px;
+      }
+
     }
 
   }
@@ -55,6 +94,10 @@
     flex-direction: row;
     gap: 57px;
     font-weight: bold;
+    @media @bw400{
+      flex-direction: column;
+      gap: 20px;
+    }
     &--a {
       font-family: @font1;
       font-size: 16px;
