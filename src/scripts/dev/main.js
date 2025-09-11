@@ -193,18 +193,22 @@
   }
 
   // Добавляем обработчики событий для каждого сердца
-  for (let i = 1; i <= 12; i++) {
-    const heart = document.getElementById(`heart${i}`);
-    heart.addEventListener('click', function(event) {
-      event.stopPropagation(); // Останавливаем всплытие события
-      toggleHeartColor(`heart${i}`);
+    document.addEventListener("DOMContentLoaded", function() {
+      for (let i = 1; i <= 12; i++) {
+        const heart = document.getElementById(`heart${i}`);
+        if (heart) { // Проверяем, существует ли элемент
+          heart.addEventListener('click', function(event) {
+            event.stopPropagation(); // Останавливаем всплытие события
+            toggleHeartColor(`heart${i}`);
+          });
+        }
+      }
     });
-  }
+
 
 
   // ---------------- Google map -----------------------------
 
-  // Получаем все элементы с классом "js-address" и добавляем обработчик события на клик
   document.querySelectorAll(".js-address").forEach((addressElement) => {
     addressElement.addEventListener("click", function (event) {
       // Отменяем стандартное поведение ссылки
