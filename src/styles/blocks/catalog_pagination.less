@@ -1,4 +1,4 @@
-.pagination {
+.catalog_pagination {
   display: flex;
   align-items: center;
   padding: 65px 0 149px;
@@ -29,7 +29,7 @@
     li {
       margin: 0;
 
-      .page-link {
+      .catalog_pagination__link {
         display: flex;
         width: 52px;
         height: 52px;
@@ -56,14 +56,14 @@
           width: 48px;
           height: 48px;
           font-size: 16px;
-          &__hidden {
+          &--hide {
             display: none;
           }
         }
       }
 
-      .page-prev,
-      .page-next {
+      .catalog_pagination__page-prev,
+      .catalog_pagination__page-next {
         height: 48px;
         display: inline-flex;
         align-items: center;

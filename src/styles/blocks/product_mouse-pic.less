@@ -1,0 +1,243 @@
+.product_mose_pic {
+  .container();
+  margin-top: 55px;
+
+  @media @bw768{
+    margin-top: 31px;
+  }
+  @media @bw400{
+    margin-top: 26px;
+  }
+
+  &__hide {
+    position: absolute !important;
+    width: 0 !important;
+    height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: 0 !important;
+    clip: rect(0 0 0 0) !important;
+    clip-path: inset(100%) !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+  }
+
+  &__title400{
+    display: none;
+    @media @bw1024{
+      display: flex;
+      width: 100%;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 40px;
+      h1 {
+        margin: 0;
+        font-size: 20px;
+      }
+    }
+
+    @media @bw768 {
+      margin-bottom: 28px;
+      align-items: start;
+      h1 {
+        font-size: 16px;
+        max-width: 74%;
+      }
+    }
+  }
+
+  &__box {
+    display: flex;
+    padding-bottom: 62px;
+    @media @bw768 {
+      flex-direction: column;
+    }
+  }
+
+  &__image {
+    width: 478px;
+    display: flex;
+    @media @bw1660{
+      width: 444px;
+    }
+    @media @bw768{
+      width: 100%;
+      justify-content: center;
+    }
+  }
+
+  &__pic{
+    @media @bw768{
+      width: 574px;
+
+    }
+  }
+
+  &__info{
+    width: calc(100% - 478px);
+    padding-left: 62px;
+    @media @bw1660{
+      width: calc(100% - 478px);
+      padding-left: 40px;
+    }
+
+    @media @bw1024{
+      width: 100%;
+      padding-left: 0;
+      .product-page__title, .product-page__favorites{
+        display: none;
+      }
+    }
+  }
+
+  &__title {
+    font-size: 24px;
+    font-weight: 600;
+    margin-top: -3px;
+    margin-bottom: 30px;
+    @media @bw768 {
+      display: none;
+    }
+  }
+
+  &__title400 {
+    display: none;
+    font-size: 24px;
+    font-weight: 600;
+    margin-top: -3px;
+    margin-bottom: 30px;
+    @media @bw768 {
+      display: flex;
+    }
+  }
+
+  &__price{
+    font-size: 40px;
+    font-weight: 600;
+    padding-top: 13px;
+    padding-bottom: 13px;
+    @media @bw1024{
+      font-size: 34px;
+      padding-top: 31px;
+      padding-bottom: 0;
+    }
+    @media @bw768{
+      font-size: 20px;
+      padding-top: 28px;
+    }
+  }
+
+  &__radio{
+    display: flex;
+    padding-top: 34px;
+    padding-bottom: 2px;
+    gap: 10px 50px;
+    @media @bw1024{
+      padding-top: 31px;
+      padding-bottom: 7px;
+      gap: 10px 56px;
+    }
+    @media @bw768{
+      padding-top: 23px;
+      gap: 24px 56px;
+    }
+    @media @bw400{
+      flex-direction: column;
+    }
+  }
+
+  &__quantity{
+    display: flex;
+    align-items: center;
+    padding-top: 20px;
+    margin-bottom: 50px;
+    a {
+      display: inline-flex;
+      width: 24px;
+      height: 24px;
+    }
+    &--text{
+      margin-right: 45px;
+      font-weight: 600;
+    }
+    &--cnt {
+      align-items: center;
+      text-align: center;
+      gap: 0 15px;
+    }
+    &--input{
+      width: 30px;
+      height: 25px;
+      text-align: center;
+      border: none;
+      outline: none;
+      background: none;
+    }
+  }
+
+  &__btn {
+    display: flex;
+    margin-bottom: 30px;
+    align-items: center;
+    gap: 10px 28px;
+    @media @bw1024{
+      margin-top: 19px;
+      margin-bottom: 24px;
+    }
+    @media @bw768{
+      .btn {
+        width: 100%;
+      }
+      margin-top: 4px;
+    }
+  }
+
+  &__heart {
+    width: 24px;
+    height: 24px;
+    border: 0;
+    padding: 0;
+    outline: none;
+    @media @bw768{
+      display: none;
+    }
+  }
+
+  &__heart400 {
+    display: none;
+    width: 24px;
+    height: 24px;
+    border: 0;
+    padding: 0;
+    outline: none;
+    @media @bw768{
+      display: block;
+    }
+  }
+
+  &__delivery {
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+    &-ico{
+      display: inline-flex;
+      width: 24px;
+      height: 24px;
+      margin-right: 10px;
+    }
+  }
+
+  .radio__item{
+    display: flex;
+    align-items: center;
+    gap: 10px 15px;
+  }
+
+  .radio__mark{
+    width: 16px;
+    height: 16px;
+  }
+
+}

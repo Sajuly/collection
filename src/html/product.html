@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  @@include('blocks/head.html')
+  <title>Product</title>
+</head>
+
+<body class="body">
+@@include('blocks/page-header.html')
+
+<div aria-label="Breadcrumb">
+
+  <div class="breadcrumb breadcrumb__product">
+    <a href="index.html" class="breadcrumb__item">Главная&nbsp;</a>
+    <a href="catalog.html" class="breadcrumb__item">Каталог&nbsp;</a>
+    <a href="events.html" class="breadcrumb__item breadcrumb__item--inactive">Постер Andy Mouse | 60-60 см</a>
+  </div>
+
+  <div class="breadcrumb breadcrumb__catalog--arrow-back">
+    <a href="index.html">
+      <svg class="" width="24" height="24">
+        <use xlink:href="assets/icons/symbols.svg#arrow-left"></use>
+      </svg>
+    </a>
+  </div>
+
+</div>
+
+<main class="main">
+
+  @@include('blocks/product/product_mouse-pic.html')
+  @@include('blocks/product/product_description.html')
+  @@include('blocks/product/product_carousel.html')
+
+</main>
+
+@@include('blocks/page-footer.html')
+
+</body>
+</html>
