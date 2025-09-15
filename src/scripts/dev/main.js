@@ -14,7 +14,7 @@
     });
 
 
-    // ---------------- пагинатор "а нет показалось"
+    // ---------------- пагинатор "а нет показалось" --------------
 
     document.addEventListener("DOMContentLoaded", function () {
         const paginatorLinks = document.querySelectorAll('.js_home_paginator');
@@ -60,7 +60,7 @@
         });
     });
 
-    // ---------------- Слайдер
+    // ---------------- Слайдер ----------------
 
     $(".slider__owl").owlCarousel({
         loop: true, // Зацикливать слайд
@@ -98,8 +98,7 @@
         },
     });
 
-
-    // --- карусель в детальной Энди Маус
+    // --- карусель в детальной Энди Маус ----------------
 
     $(".product-page__related").owlCarousel({
         loop: true,
@@ -288,7 +287,8 @@
         }
     }
 
-    // --- Слайдер для диапазона цен
+    // --- Слайдер для диапазона цен ---------------
+
     $("#slider-range").slider({
         range: true,
         min: 1,
@@ -317,9 +317,9 @@
 
     //------ Кастомизация селекта ---------
 
-    const jsSelectric = $(".js-selectric");
-    if (jsSelectric.length) {
-        jsSelectric.selectric({
+    const select = $(".js-select");
+    if (select.length) {
+        select.selectric({
             nativeOnMobile: false,
         });
     }
@@ -333,7 +333,7 @@
         });
     }
 
-    // ------ Инициализация календаря -------
+    // ------ Календаря -------
 
     const dateField = $(".js-dateField");
     if (dateField.length) {

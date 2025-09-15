@@ -1,0 +1,124 @@
+<div class="registration_form">
+  <h1 class="registration_form__title title">Регистрация</h1>
+
+  <div class="registration_form__title2">
+    <span class="registration_form__title2--sign-in">Уже есть авторизованный аккаунт?</span>
+    <a href="#">Войти</a>
+  </div>
+
+  <form action="#" class="registration_form__form" id="js-eventForm">
+
+    <div class="registration_form__box">
+
+      <!--   Email  -->
+      <div class="registration_form__col">
+        <label class="registration_form__field">
+          <span class="registration_form__label">Email<span class="mark">*</span></span>
+          <input class="registration_form__input" type="email" placeholder="Введи свой e-mail" name="email"
+                 required="">
+        </label>
+      </div>
+
+      <!--   Телефон  -->
+      <div class="registration_form__col">
+        <label class="registration_form__field">
+          <span class="registration_form__label">Телефон</span>
+          <input class="registration_form__input js-mobileMask" type="tel" placeholder="Укажи свой телефон"
+                 name="phone" maxlength="18">
+        </label>
+      </div>
+
+      <!--   Имя  -->
+      <div class="registration_form__col">
+        <label class="registration_form__field">
+          <span class="registration_form__label">Имя<span class="mark">*</span></span>
+          <input class="registration_form__input" type="text" placeholder="Укажи имя" name="name" required="">
+        </label>
+      </div>
+
+      <!--   Фамилия  -->
+      <div class="registration_form__col">
+        <label class="registration_form__field">
+          <span class="registration_form__label">Фамилия</span>
+          <input class="registration_form__input" type="text" placeholder="Укажи фамилию" name="surname">
+        </label>
+      </div>
+
+      <!--   Пароль  -->
+      <div class="registration_form__col">
+        <label class="registration_form__field">
+          <span class="registration_form__label">Пароль<span class="mark">*</span></span>
+          <input class="registration_form__input" type="password" placeholder="Придумай пароль" name="password"
+                 required="" maxlength="18">
+        </label>
+      </div>
+
+      <!--   Подтверждение пароля  -->
+      <div class="registration_form__col">
+        <label class="registration_form__field">
+          <span class="registration_form__label">Подтверждение пароля<span class="mark">*</span></span>
+          <input class="registration_form__input" type="password" placeholder="Повтори пароль"
+                 name="password_true" required="" maxlength="18">
+        </label>
+      </div>
+
+      <!--   Страна  -->
+      <div class="registration_form__col">
+        <label class="registration_form__field">
+          <span class="registration_form__label">Страна</span>
+          <select name="select" id="select" class="registration_form__select js-select">
+            <option value="val-2">Россия</option>
+            <option value="val-2">Израиль</option>
+            <option value="val-2">Индия</option>
+            <option value="val-2">Германия</option>
+            <option value="val-2">Польша</option>
+            <option value="val-2">Швеция</option>
+            <option value="val-2">Япония</option>
+          </select>
+        </label>
+      </div>
+
+      <!--   ДР  -->
+      <div class="registration_form__col">
+        <div class="registration_form__field">
+          <span class="registration_form__label">Дата рождения</span>
+          <div class="registration_form__field--data js-dateField">
+            <div class="registration_form__field--data-inputs">
+              <input class="registration_form__field--data-input js-dateDay" type="text" placeholder="ДД"
+                     readonly="">
+              <input class="registration_form__field--data-input js-dateMonth" type="text" placeholder="ММ"
+                     readonly="">
+              <input class="registration_form__field--data-input js-dateYear" type="text"
+                     placeholder="ГГГГ" readonly="">
+              <span class="svg-ico">
+                  <svg width="24" height="24">
+                      <use xlink:href="assets/icons/symbols.svg#calendar2"></use>
+                  </svg>
+                </span>
+            </div>
+            <input class="registration_form__field--date-picker js-dateInput" type="text" name="date" readonly=""
+                   required="">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="registration_form__check-box">
+      <div>
+        <label class="check">
+          <input type="checkbox" name="agree" class="check__input" required="" checked="">
+          <span class="check__mark"></span>
+        </label>
+      </div>
+      <div>
+        <span class="registration_form__span"> Нажимая «Создать аккаунт», я подтверждаю, что ознакомился с положениями, указанными в статьях
+          <a href="#">Условия использования</a> и <a href="#">Политика конфиденциальности</a>.
+        </span>
+      </div>
+
+    </div>
+    <div class="registration_form__btn">
+      <button type="submit" class="registration_form__btn--btn btn">Создать аккаунт</button>
+    </div>
+  </form>
+</div>
