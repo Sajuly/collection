@@ -92,7 +92,7 @@
                 items: 3, // 3 элемента при ширине 768-1339px
                 autoWidth: true, // Автоматическая ширина для элементов
             },
-            1340: {
+            1799: {
                 items: 5, // 5 элементов при ширине 1340px и выше
             },
         },
@@ -100,7 +100,7 @@
 
     // --- карусель в детальной Энди Маус ----------------
 
-    $(".product-page__related").owlCarousel({
+    $(".product_carousel__related").owlCarousel({
         loop: true,
         margin: 0,
         center: false,
@@ -152,17 +152,16 @@
 
     //-------------------Закрасить и посчитать сердечки catalog ---------------------------
 
-    // Функция для изменения цвета сердца по его id
-    function toggleHeartColor(id) {
+    function toggleHeartColor(id, head_id, counter) {
         const heart = document.getElementById(id);
         const path = heart.querySelector('path');
         const currentFill = path.getAttribute('fill');
 
-        const h_heart = document.getElementById('head_heart');
-        const h_path = h_heart.querySelector('path');
+        const h_id = document.getElementById(head_id);
+        const h_path = h_id.querySelector('path');
 
         // Получаем текущий счетчик
-        const countElement = document.getElementById('heartCount');
+        const countElement = document.getElementById(counter);
         let count = parseInt(countElement.textContent);
 
 
@@ -199,11 +198,25 @@
             if (heart) { // Проверяем, существует ли элемент
                 heart.addEventListener('click', function (event) {
                     event.stopPropagation(); // Останавливаем всплытие события
-                    toggleHeartColor(`heart${i}`);
+                    toggleHeartColor(`heart${i}`, `head_heart`, `heartCount`);
                 });
             }
         }
     });
+
+    // Добавляем обработчики событий для каждой тележки
+    document.addEventListener("DOMContentLoaded", function () {
+        for (let i = 1; i <= 12; i++) {
+            const heart = document.getElementById(`cart${i}`);
+            if (heart) { // Проверяем, существует ли элемент
+                heart.addEventListener('click', function (event) {
+                    event.stopPropagation(); // Останавливаем всплытие события
+                    toggleHeartColor(`heart${i}`, `head_cart`, `cartCount`);
+                });
+            }
+        }
+    });
+
 
     //--------------- Кол-во +/- 1 ---------------------------
 

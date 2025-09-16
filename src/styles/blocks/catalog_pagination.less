@@ -37,7 +37,7 @@
         align-items: center;
         text-decoration: none;
         line-height: 1;
-        color: #111;
+        color: @black;
         border-radius: 50%;
         transition: all 0.2s;
 
@@ -48,8 +48,8 @@
 
         &.active {
           background-color: @blue_d;
-          color: white;
-          border-color: #007bff;
+          color: @white;
+          border-color: @blue_d;
         }
 
         @media @bw768 {
@@ -83,7 +83,7 @@
       .page-ellipsis {
         display: block;
         padding: 8px 12px;
-        color: #999;
+        color: @gray_d;
       }
     }
 
@@ -100,4 +100,5 @@
       }
     }
   }
+
 }
