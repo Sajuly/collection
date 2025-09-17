@@ -211,7 +211,7 @@
             if (heart) { // Проверяем, существует ли элемент
                 heart.addEventListener('click', function (event) {
                     event.stopPropagation(); // Останавливаем всплытие события
-                    toggleHeartColor(`heart${i}`, `head_cart`, `cartCount`);
+                    toggleHeartColor(`cart${i}`, `head_cart`, `cartCount`);
                 });
             }
         }
